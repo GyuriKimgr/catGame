@@ -1,0 +1,3 @@
+﻿  day.c
+C:\Users\User\source\repos\ooc\cat Project\cat Project\day.c(20,7): warning C4101: 'key' :참조되지 않은 지역 변수입니다.
+  cat Project.vcxproj -> C:\Users\User\source\repos\ooc\cat Project\x64\Debug\cat Project.exe

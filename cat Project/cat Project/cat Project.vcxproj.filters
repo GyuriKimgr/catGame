@@ -18,5 +18,8 @@
     <ClCompile Include="day.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Ending.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

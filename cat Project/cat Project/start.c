@@ -6,11 +6,9 @@
 
 #pragma once
 
-#define pause system("pause > nul")		// DEFINE 선언
 
 #define UP 0
 #define DOWN 1
-#define SUBMIT 2
 
 #define color 9
 #define default 15
@@ -19,13 +17,23 @@ void setconsleview() {
 	system("mode con:cols=80 lines=30");
 }
 void gotoxy(int x, int y) {
-	HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD pos = { x, y };
-	SetConsoleCursorPosition(consolehandle, pos);
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-int keyControl() {
-	
+int story() {
+	system("cls");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+	printf("오늘도 지긋지긋한 아르바이트를 하러 간다...\n");
+	printf("어 저게 뭐지?\n\n");
+	printf("(자세히 살펴본다)\n\n");
+	printf("->고양이가 짠~~ \n\n");
+	printf("  /|____/|\n");
+	printf("=( °w ° )=\n");
+	printf("  )      (  //\n");
+	printf(" (__  __  )//\n\n");
+	printf("못 보던 고양이다. 귀여워~ 어떻게 할까?\n\n");
+	printf("day1->>>\n\n");
 }
 
 int drawmenu() {
@@ -55,9 +63,8 @@ int drawmenu() {
 				gotoxy(x, 20);
 				printf("게임종료\n");
 			}
-		char ch;
 
-		ch = _getch();
+		char ch = _getch();
 
 
 			switch (ch) {
@@ -67,14 +74,20 @@ int drawmenu() {
 			case 80:
 				if (y < 20) y++;
 				break;
+			case 13:
+				if (y == 18) {
+					return 1;
+				}
+				else if(y == 20){
+					return 0;
+				}
 			}
-		
-		
 	}
 }
-int main() {
+
+int main(void) {
 	setconsleview();
-	
+
 	printf("■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□\n");
 	printf("□                                                                            ■\n");
 	printf("■                 _   _  _ _|_   _ _ _|_   _  _ _  . _  __|_                 □\n");
@@ -101,8 +114,19 @@ int main() {
 	printf("□                                                                            ■\n");
 	printf("■                                                                            □\n");
 	printf("□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■\n");
-	
+
 	drawmenu();
+	int code = drawmenu();
+	while (1) {
+		system("cls");
+	if (code == 1) {
+		story();
+		break;
+	}
+	else if (code == 0) {
+		return 0;
+	}
+}
 
 }
 

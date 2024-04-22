@@ -12,7 +12,7 @@
 
 #define color 9
 #define default 15
- 
+
 void setconsleview() {
 	system("mode con:cols=80 lines=30");
 }
@@ -20,20 +20,39 @@ void gotoxy(int x, int y) {
 	COORD pos = { x, y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
+void quitgame() {
+	exit(0);
+}
 
 int story() {
 	system("cls");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-	printf("오늘도 지긋지긋한 아르바이트를 하러 간다...\n");
-	printf("어 저게 뭐지?\n\n");
-	printf("(자세히 살펴본다)\n\n");
-	printf("->고양이가 짠~~ \n\n");
-	printf("  /|____/|\n");
-	printf("=( °w ° )=\n");
-	printf("  )      (  //\n");
-	printf(" (__  __  )//\n\n");
-	printf("못 보던 고양이다. 귀여워~ 어떻게 할까?\n\n");
-	printf("day1->>>\n\n");
+	printf("■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");;
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□                                                                            ■\n");
+	printf("■                                                                            □\n");
+	printf("□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■\n");
 }
 
 int drawmenu() {
@@ -48,40 +67,40 @@ int drawmenu() {
 		gotoxy(x, 20);
 		printf("게임종료\n");
 
-		
-			if (y == 18) {
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
-				gotoxy(x, 18);
-				printf("시작하기\n");
-				
-			}
-		    else{
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-				gotoxy(x, 18);
-				printf("시작하기\n");
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
-				gotoxy(x, 20);
-				printf("게임종료\n");
-			}
+
+		if (y == 18) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 18);
+			printf("시작하기\n");
+
+		}
+		else {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 18);
+			printf("시작하기\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 20);
+			printf("게임종료\n");
+		}
 
 		char ch = _getch();
 
 
-			switch (ch) {
-			case 72:
-				if (y > 18)y--;
-				break;
-			case 80:
-				if (y < 20) y++;
-				break;
-			case 13:
-				if (y == 18) {
-					return 1;
-				}
-				else if(y == 20){
-					return 0;
-				}
+		switch (ch) {
+		case 72:
+			if (y > 18)y--;
+			break;
+		case 80:
+			if (y < 20) y++;
+			break;
+		case 13:
+			if (y == 18) {
+				return 1;
 			}
+			else if (y == 20) {
+				return 0;
+			}
+		}
 	}
 }
 
@@ -119,14 +138,13 @@ int main(void) {
 	int code = drawmenu();
 	while (1) {
 		system("cls");
-	if (code == 1) {
-		story();
-		break;
+		if (code == 1) {
+			story();
+			break;
+		}
+		else if (code == 0) {
+			return 0;
+		}
 	}
-	else if (code == 0) {
-		return 0;
-	}
-}
 
 }
-

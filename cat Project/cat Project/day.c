@@ -1,6 +1,6 @@
 #include "start.h"
 
-
+int heart = 0;
 
 void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
 	int i = 0;
@@ -84,7 +84,6 @@ int day1() {
 		}
 
 		int ch = _getch();
-
 		switch (ch) {
 		case 72:
 			if (y > 12) y--;
@@ -93,7 +92,18 @@ int day1() {
 			if (y < 14) y++;
 			break;
 		case 13:
-			break;
+			if (y == 12) {
+				heart += 3;
+				return 0;
+			}
+			else if (y == 13) {
+				heart += 2;
+				return 0;
+			}
+			else if (y == 14) {
+				heart -= 3;
+				return 0;
+			}
 		}
 	}
 
@@ -205,6 +215,25 @@ int day10() {
 
 int main() {
 	setconsleview();
-	cat1();
-	day1();
+	int dayCnt = 1;
+	while (dayCnt <= 10) {
+		switch (dayCnt) {
+		case 1:
+			system("cls");
+			cat1();
+			day1();
+		case 2:
+			system("cls");
+			cat2();
+			day2();
+
+		}
+		char key = _getch();
+		while (1) {
+			if (key == 13) {
+				dayCnt++;
+			}
+		}
+		break;
+	}
 }

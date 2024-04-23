@@ -1,5 +1,7 @@
 #include "start.h"
 
+
+
 void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
 	int i = 0;
 	while (s[i] != 0) {
@@ -32,34 +34,70 @@ int cat1() {
 
 }
 int day1() {
+	int x = 0, y = 12;
 	printf("\n");
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 	printf("================================================================================\n");
 	slowPrint(1, "★ Day.1 고양이를 마주쳤다. 어떻게 할까?\n");
 	slowPrint(1, "1.간식을 준다. \n");
 	slowPrint(1, "2.따뜻한 눈빛으로 쳐다만 본다. \n");
 	slowPrint(1, "3.'저리가'라고 소리친다. \n");
 	printf("================================================================================\n");
-	int x = 0, y = 12;
-	while (1) {
 
-		
-		char ch = _getch();
+	while (1) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		gotoxy(x, 12);
+		printf("1.간식을 준다. \n");
+		gotoxy(x, 13);
+		printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
+		gotoxy(x, 14);
+		printf("3.'저리가'라고 소리친다. \n");
+
+
+		if (y == 12) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 12);
+			printf("1.간식을 준다. \n");
+
+		}
+		else if (y == 13) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 12);
+			printf("1.간식을 준다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 13);
+			printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 14);
+			printf("3.'저리가'라고 소리친다. \n");
+		}
+
+		else if (y == 14) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 12);
+			printf("1.간식을 준다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 13);
+			printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 14);
+			printf("3.'저리가'라고 소리친다. \n");
+		}
+
+		int ch = _getch();
 
 		switch (ch) {
 		case 72:
-			if (y > 12) {
-				y--;
-			}
+			if (y > 12) y--;
+			break;
 		case 80:
-			if (y < 14) {
-				y++;
-			}
+			if (y < 14) y++;
+			break;
 		case 13:
 			break;
 		}
 	}
-	return 0;
+
+
 }
 int cat2() {
 	printf("    ( ?  )               _\n");

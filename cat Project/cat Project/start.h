@@ -9,8 +9,12 @@
 #define UP 0		// DEFINE ¼±¾ð
 #define DOWN 1
 
+#define color 9
+#define default 15
+
 void setconsleview();
-void gotoxy();
+void gotoxy(int x, int y);
 int story();
 int drawmenu();
+int startScreen(void);
 

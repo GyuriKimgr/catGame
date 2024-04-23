@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <conio.h>
+#include"start.h"
 
 #pragma once
 
@@ -85,23 +86,20 @@ int drawmenu() {
 
 		switch (ch) {
 		case 72:
-			if (y > 18)y--;
+			if (y > 18)--y;
 			break;
 		case 80:
-			if (y < 20) y++;
+			if (y < 20)++y;
 			break;
 		case 13:
-			if (y == 18) {
-				return 1;
-			}
-			else if (y == 20) {
-				return 0;
-			}
+			if (y == 18)return 1;
+			else return 0;
+
 		}
 	}
 }
 
-int main(void) {
+int startScreen(void) {
 	setconsleview();
 
 	printf("¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à\n");
@@ -131,13 +129,13 @@ int main(void) {
 	printf("¡á                                                                            ¡à\n");
 	printf("¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á\n");
 
-	drawmenu();
+	
 	int code = drawmenu();
-	while (1) {
-		system("cls");
-		if (code == 1) {
-			story();
-			break;
-		}
+	if (code == 1) {
+		story();
 	}
+	else {
+		exit(0);
+	}
+	return 0;
 }

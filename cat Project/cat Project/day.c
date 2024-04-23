@@ -1,16 +1,9 @@
 #include<stdio.h>
 #include <conio.h>
 #include <Windows.h>
+#include "start.h"
 
-void setconsleview() {
-	system("mode con:cols=80 lines=30");
-}// 콘솔창 크기
 
-void gotoxy(int x, int y) {
-	HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD pos = { x, y };
-	SetConsoleCursorPosition(consolehandle, pos);  //커서 위치 고정시키는 함수
-}
 
 void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
 	int i = 0;
@@ -106,7 +99,7 @@ int day10() {
 	printf("================================================================================\n");
 	slowPrint(1, "★ Day.10 고양이가 내 뒤를 따라온다. 어떻게 할까?\n");
 	slowPrint(1, "1.아르바이트 하는 곳까지 따라오게 냅둔다. \n");
-	slowPrintf(1, "2.심심한가보다. 나뭇가지로 놀아준다. \n");
+	slowPrint(1, "2.심심한가보다. 나뭇가지로 놀아준다. \n");
 	slowPrint(1, "3.뛴다. \n");
 	printf("================================================================================\n");
 
@@ -115,8 +108,8 @@ int day10() {
 
 int main() {
 	setconsleview();
-
 	char key;
+	day1();
 	
 	
 }

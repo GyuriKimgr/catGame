@@ -59,6 +59,7 @@ int day1() {
 			printf("1.간식을 준다. \n");
 
 		}
+
 		else if (y == 13) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 			gotoxy(x, 12);

@@ -32,6 +32,7 @@ int cat1() {
 
 }
 int day1() {
+	int x = 0, y = 0;
 	printf("\n");
 	printf("================================================================================\n");
 	slowPrint(1, "★ Day.1 고양이를 마주쳤다. 어떻게 할까?\n");
@@ -39,6 +40,49 @@ int day1() {
 	slowPrint(1, "2.따뜻한 눈빛으로 쳐다만 본다. \n");
 	slowPrint(1, "3.'저리가'라고 소리친다. \n");
 	printf("================================================================================\n");
+	while (1) {
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		gotoxy(x, y = 12);
+		printf("1.간식을 준다. \n");
+		gotoxy(x, y+1);
+		printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
+		gotoxy(x, y+2);
+		printf("3.'저리가'라고 소리친다. \n");
+
+
+		if (y == 12) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 12);
+			printf("1.간식을 준다. \n");
+
+		}
+		else if (y == 13) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 12);
+			printf("1.간식을 준다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 13);
+			printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 14);
+			printf("3.'저리가'라고 소리친다. \n");
+		}
+
+		char ch = _getch();
+
+		switch (ch) {
+		case 72:
+			if (y > 12) y--;
+			break;
+		case 80:
+			if (y < 14) y++;
+			break;
+		case 13:
+			break;
+		}
+	}
+
 
 }
 int cat2() {

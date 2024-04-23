@@ -8,16 +8,16 @@
 #pragma once
 
 
-#define UP 0
+#define UP 0		// define 선언
 #define DOWN 1
 
-#define color 9
-#define default 15
+#define color 9		// 선택된 글자색
+#define default 15	// 기본 글자색
 
-void setconsleview() {
+void setconsleview() {		// 콘솔창 크기
 	system("mode con:cols=80 lines=30");
 }
-void gotoxy(int x, int y) {
+void gotoxy(int x, int y) {		// 커서 좌표
 	COORD pos = { x, y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }

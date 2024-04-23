@@ -1,5 +1,7 @@
 #include "start.h"
 
+
+
 void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
 	int i = 0;
 	while (s[i] != 0) {
@@ -32,7 +34,7 @@ int cat1() {
 
 }
 int day1() {
-	int x = 0, y = 0;
+	int x = 0, y = 12;
 	printf("\n");
 	printf("================================================================================\n");
 	slowPrint(1, "★ Day.1 고양이를 마주쳤다. 어떻게 할까?\n");
@@ -40,14 +42,14 @@ int day1() {
 	slowPrint(1, "2.따뜻한 눈빛으로 쳐다만 본다. \n");
 	slowPrint(1, "3.'저리가'라고 소리친다. \n");
 	printf("================================================================================\n");
-	while (1) {
 
+	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-		gotoxy(x, y = 12);
+		gotoxy(x, 12);
 		printf("1.간식을 준다. \n");
-		gotoxy(x, y+1);
+		gotoxy(x, 13);
 		printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
-		gotoxy(x, y+2);
+		gotoxy(x, 14);
 		printf("3.'저리가'라고 소리친다. \n");
 
 
@@ -69,7 +71,19 @@ int day1() {
 			printf("3.'저리가'라고 소리친다. \n");
 		}
 
-		char ch = _getch();
+		else if (y == 14) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 12);
+			printf("1.간식을 준다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 13);
+			printf("2.따뜻한 눈빛으로 쳐다만 본다. \n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 14);
+			printf("3.'저리가'라고 소리친다. \n");
+		}
+
+		int ch = _getch();
 
 		switch (ch) {
 		case 72:

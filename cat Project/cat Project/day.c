@@ -1,16 +1,4 @@
-#include<stdio.h>
-#include <conio.h>
-#include <Windows.h>
-
-void setconsleview() {
-	system("mode con:cols=80 lines=30");
-}// 콘솔창 크기
-
-void gotoxy(int x, int y) {
-	HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD pos = { x, y };
-	SetConsoleCursorPosition(consolehandle, pos);  //커서 위치 고정시키는 함수
-}
+#include "start.h"
 
 void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
 	int i = 0;
@@ -20,17 +8,52 @@ void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
 		Sleep(speed);
 	}
 }
+int cat1() {
+	int x = 20, y = 0;
+	gotoxy(x, y);
+	printf("                         _\n");
+	gotoxy(x, y+1);
+	printf("                         \\\n");
+	gotoxy(x, y+2);
+	printf("        |\\_/|           ||\n");
+	gotoxy(x, y+3);
+	printf("        )- - '._.-""""-.=-  //\n");
+	gotoxy(x, y+4);
+	printf("       = \Y_= /          \//\n");
+	gotoxy(x, y+5);
+	printf("         `''`\       /    /\n");
+	gotoxy(x, y+6);
+	printf("             |    \ |   /\n");
+	gotoxy(x, y+7);
+	printf("              \\   /- \ \\ \n");
+	gotoxy(x, y+8);
+	printf("             ((_| ((_/\n");
 
+
+}
 int day1() {
+	printf("\n");
 	printf("================================================================================\n");
-	slowPrint(1,"★ Day.1 고양이를 마주쳤다. 어떻게 할까?\n");
+	slowPrint(1, "★ Day.1 고양이를 마주쳤다. 어떻게 할까?\n");
 	slowPrint(1, "1.간식을 준다. \n");
 	slowPrint(1, "2.따뜻한 눈빛으로 쳐다만 본다. \n");
 	slowPrint(1, "3.'저리가'라고 소리친다. \n");
 	printf("================================================================================\n");
 
 }
+int cat2() {
+	printf("    ( ?  )               _\n");
+	printf("      v                  \\\n");
+	printf("        |\\_/|           ||\n");
+	printf("        )- - '._.-""""-.=-  //\n");
+	printf("       = \Y_= /          \//\n");
+	printf("         `''`\       /    /\n");
+	printf("             |    \ |   /\n");
+	printf("              \\   /- \ \\ \n");
+	printf("             ((_| ((_/\n");
 
+
+}
 int day2() {
 	printf("================================================================================\n");
 	slowPrint(1, "★ Day.2 어제 봤던 고양이를 또 마주쳤다. 어떻게 할까?\n");
@@ -38,6 +61,15 @@ int day2() {
 	slowPrint(1, "2.꼬리를 만져본다. \n");
 	slowPrint(1, "3.손으로 놀아준다. \n");
 	printf("================================================================================\n");
+}
+
+int cat3() {
+	printf("         (zzz...)\n");
+	printf("          v\n");
+	printf("  |\\      _,,,,--,,_\n");
+	printf(" / , `. - '`' - ,\\ - ;,\n");
+	printf("|, 4 - ) ), , __,\\ (;;\n");
+	printf("'---''(.'--'  `-'`.)`'\n");
 }
 
 int day3() {
@@ -106,7 +138,7 @@ int day10() {
 	printf("================================================================================\n");
 	slowPrint(1, "★ Day.10 고양이가 내 뒤를 따라온다. 어떻게 할까?\n");
 	slowPrint(1, "1.아르바이트 하는 곳까지 따라오게 냅둔다. \n");
-	slowPrintf(1, "2.심심한가보다. 나뭇가지로 놀아준다. \n");
+	slowPrint(1, "2.심심한가보다. 나뭇가지로 놀아준다. \n");
 	slowPrint(1, "3.뛴다. \n");
 	printf("================================================================================\n");
 
@@ -115,8 +147,6 @@ int day10() {
 
 int main() {
 	setconsleview();
-
-	char key;
-	
-	
+	cat1();
+	day1();
 }

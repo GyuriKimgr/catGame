@@ -4,7 +4,13 @@
 **Game that you can increase a stray cat's affection and unlock multiple endings.**
    
 ## Starting Story
+**게임 실행 시 제목과 그림, '게임 시작'과 '게임 종료' 버튼이 나타난다.**
 
+**플레이어는 지루한 나날을 보내고 있다.**
+
+**오늘도 어김없이 아르바이트를 하러 가던 중, 귀여운 고양이를 발견한다.**
+
+**
 
 ## Option
 

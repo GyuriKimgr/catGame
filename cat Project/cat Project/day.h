@@ -6,6 +6,9 @@
 
 #pragma once
 
+extern int heart;   // 애정도 변수
+extern int hidden;  //히든엔딩 변수
+
 int cat1();
 int day1();
 int cat2();

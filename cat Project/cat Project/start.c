@@ -29,6 +29,13 @@ void slowPrint(unsigned long speed, const char* s) { //Å¸ÀÚ È¿°ú ÇÔ¼ö
 		Sleep(speed);
 	}
 }
+void hideCursor() { //±ô¹ÚÀÌ´Â Ä¿¼­ ¼û±è
+	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO ConsoleCursor;
+	ConsoleCursor.bVisible = 0;
+	ConsoleCursor.dwSize = 1;
+	SetConsoleCursorInfo(consoleHandle, &ConsoleCursor);
+}
 
 int story() {
 	system("cls");

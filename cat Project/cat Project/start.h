@@ -13,6 +13,8 @@
 #define default 15
 
 void setconsleview();
+void hideCursor();
+void slowPrint(unsigned long speed, const char* s);
 void gotoxy(int x, int y);
 int story();
 int drawmenu();

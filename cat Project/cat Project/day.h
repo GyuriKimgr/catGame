@@ -6,10 +6,6 @@
 
 #pragma once
 
-int heart = 0;		//애정도 변수
-int hidden = 0;		//히든 변수
-
-void slowPrint(unsigned long speed, const char* s); //타자효과 함수
 int cat1();
 int day1();
 int cat2();

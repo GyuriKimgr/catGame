@@ -1,17 +1,9 @@
 #include "start.h"
 #include "day.h"
 
-int heart = 0;		//애정도 변수
-int hidden = 0;		//히든 변수
+int heart = 0;
+int hidden = 0;
 
-void slowPrint(unsigned long speed, const char* s) { //타자 효과 함수
-	int i = 0;
-	while (s[i] != 0) {
-		printf("%c", s[i++]);
-		fflush(stdout);
-		Sleep(speed);
-	}
-}
 int cat1() {
 	int x = 20, y = 5;
 	gotoxy(x, y);
@@ -894,7 +886,7 @@ int day9() {
 		case 13:
 			if (y == 17) {
 				heart += 2;
-				hidden += 1;
+				hidden = 1;
 				return 0;
 			}
 			else if (y == 18) {
@@ -1010,52 +1002,64 @@ int gameLogic() {
 			system("cls");
 			cat1();
 			day1();
+			break;
 		case 2:
 			system("cls");
 			cat2();
 			day2();
+			break;
 		case 3:
 			system("cls");
 			cat3();
 			day3();
+			break;
 		case 4:
 			system("cls");
 			cat4();
 			day4();
+			break;
 
 		case 5:
 			system("cls");
 			cat5();
 			day5();
+			break;
 
 		case 6:
 			system("cls");
 			cat6();
 			day6();
+			break;
 		case 7:
 			system("cls");
 			cat7();
 			day7();
+			break;
 		case 8:
 			system("cls");
 			cat8();
 			day8();
+			break;
 		case 9:
 			system("cls");
 			cat9();
 			day9();
+			break;
 		case 10:
 			system("cls");
 			cat10();
 			day10();
+			break;
 
 		}
 		char key = _getch();
-		while (1) {
-			if (key == 13) {
-				dayCnt++;
-			}
+		if (hidden == 1) {
+			break;
 		}
-		break;
+		if (key == 13) {
+				dayCnt++;
+		}
+		
 	}
+	return 0;
 }

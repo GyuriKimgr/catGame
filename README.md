@@ -6,14 +6,29 @@
 ## Starting Story
 **게임 실행 시 제목과 그림, '게임 시작'과 '게임 종료' 버튼이 나타난다.**
 
-**플레이어는 지루한 나날을 보내고 있다.**
+**플레이어는 지루한 나날을 보내고 있다. 오늘도 어김없이 아르바이트를 하러 가던 중, 귀여운 길냥이를 발견한다.**
 
-**오늘도 어김없이 아르바이트를 하러 가던 중, 귀여운 고양이를 발견한다.**
+**어떻게 하면 좋을까? 게임은 시작되었다.**
 
-**
+**When you run on the game, the title with the illustration and the 'Game Start', 'Quit game' buttons are appear on monitor.**
+
+**You are having a boring days. Today is also a same, an expected day    
+  and while you lead your body way to the part-time job, you find out a cute stray cat.**
+
+**What would you do? The game has begun.**
 
 ## Option
+**DAY1부터 DAY10까지 플레이어는 고양이를 매일 만나며 각각 다른 상황을 마주한다.**
 
+**선택지는 매번 3개로, 플레이어의 선택지에 따라 길냥이의 호감도가 증가하거나 감소한다.**
+
+**호감도를 최대한 쌓아보자!**
+
+**You will see a stray cat everyday and face out each different situation from DAY1 to DAY10**
+
+**There are 3 options each time, and the cat's affection is increases or decreases based on your choice.**
+
+**Let's build out an affection as max as you can!**
 
 ## Ending
 **최종 호감도 수치로 엔딩이 다르게 나온다.**

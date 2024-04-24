@@ -1,4 +1,5 @@
 #include "start.h"
+#include "day.h"
 
 int heart = 0;		//애정도 변수
 int hidden = 0;		//히든 변수
@@ -1000,8 +1001,7 @@ int day10() {
 	}
 }
 
-
-int main() {
+int gameLogic() {
 	setconsleview();
 	int dayCnt = 1;
 	while (dayCnt <= 10) {

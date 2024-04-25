@@ -6,3 +6,9 @@
 
 #pragma once
 
+int drawing1();
+int drawing2();
+int drawing3();
+int drawing4();
+int hidden_ending();
+int Ending();

@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <conio.h>
 #include"start.h"
+#include"miniGame.h"
+int code = 0;
 
 #pragma once
 
@@ -78,6 +80,8 @@ int drawmenu() {
 		gotoxy(x, 18);
 		printf("시작하기\n");
 		gotoxy(x, 20);
+		printf("미니게임\n");
+		gotoxy(x, 22);
 		printf("게임종료\n");
 
 
@@ -87,27 +91,42 @@ int drawmenu() {
 			printf("시작하기\n");
 
 		}
-		else {
+		else if(y == 20){
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 			gotoxy(x, 18);
 			printf("시작하기\n");
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 			gotoxy(x, 20);
+			printf("미니게임\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 22);
 			printf("게임종료\n");
 		}
+		else{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 18);
+			printf("시작하기\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 20);
+			printf("미니게임\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 22);
+			printf("게임종료\n");
+			}
 
 		char ch = _getch();
 
 
 		switch (ch) {
 		case 72:
-			if (y > 18)--y;
+			if (y > 18)y-=2;
 			break;
 		case 80:
-			if (y < 20)++y;
+			if (y < 22)y+=2;
 			break;
 		case 13:
 			if (y == 18)return 1;
+			if (y == 20)return 2;
 			else return 0;
 
 		}
@@ -149,7 +168,11 @@ int startScreen(void) {
 	if (code == 1) {
 		story();
 	}
-	else {
+	else if (code == 2) {
+		mini = 1;
+		miniGame();
+	}
+	else if (code == 0){
 		exit(0);
 	}
 	return 0;

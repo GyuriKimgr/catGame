@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <conio.h>
-
 #pragma once	
 
 #define UP 0		// DEFINE ¼±¾ð

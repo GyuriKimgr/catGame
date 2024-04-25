@@ -698,11 +698,11 @@ int cat8() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 	int x = 20, y = 5;
 	gotoxy(x, y);
-	printf("   /       /            _\n");
+	printf("   /       /       /    _\n");
 	gotoxy(x, y + 1);
-	printf("        ./           /   \\\n");
+	printf("        ./        ./     \\\n");
 	gotoxy(x, y + 2);
-	printf("   ./   |\\_/|       ./   ||\n");
+	printf("   ./   |\\_/|           ||\n");
 	gotoxy(x, y + 3);
 	printf("        )- - '._.-""""-.=-  //\n");
 	gotoxy(x, y + 4);
@@ -849,7 +849,20 @@ int day9() {
 			gotoxy(x, 17);
 			printf("1.무슨일이지...? 고양이를 따라간다. \n");
 
+			int ch = _getch();
+			switch (ch) {
+			case 72:
+				if (y > 17) y--;
+				break;
+			case 80:
+				if (y < 19) y++;
+				break;
+			case 13:
+				break;
+			}
+			hidden_ending();
 		}
+		
 
 		else if (y == 18) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
@@ -970,13 +983,13 @@ int day10() {
 
 		int ch = _getch();
 		switch (ch) {
-		case 72:
+		case 72:     // 위
 			if (y > 17) y--;
 			break;
-		case 80:
+		case 80:		// 아래
 			if (y < 19) y++;
 			break;
-		case 13:
+		case 13:		
 			if (y == 17) {
 				heart += 3;
 				return 0;
@@ -1051,11 +1064,14 @@ int gameLogic() {
 			day10();
 			break;
 
+
 		}
 		char key = _getch();
 		if (hidden == 1) {
 			break;
 		}
+		
+
 		if (key == 13) {
 				dayCnt++;
 		}

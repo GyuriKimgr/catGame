@@ -46,7 +46,7 @@ int story() {
 	printf("□                                                                            ■\n");
 	slowPrint(1, "■      매일매일이 똑같은 갑갑한 일상의 반복..                                □\n");
 	printf("□                                                                            ■\n");
-	slowPrint(1, "■      지루하다.평생을 이렇게 살아가는걸까 ?                                 □\n");
+	slowPrint(1, "■      지루하다. 평생을 이렇게 살아가는걸까 ?                                □\n");
 	printf("□                                                                            ■\n");
 	slowPrint(1, "■      ... 어, 저게 뭐지?                                                    □\n");
 	printf("□                                                                            ■\n");

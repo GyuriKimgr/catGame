@@ -1015,54 +1015,47 @@ int gameLogic() {
 			system("cls");
 			cat1();
 			day1();
-			break;
 		case 2:
 			system("cls");
 			cat2();
 			day2();
-			break;
 		case 3:
 			system("cls");
 			cat3();
 			day3();
-			break;
 		case 4:
 			system("cls");
 			cat4();
 			day4();
-			break;
 
 		case 5:
 			system("cls");
 			cat5();
 			day5();
-			break;
 
 		case 6:
 			system("cls");
 			cat6();
 			day6();
-			break;
 		case 7:
 			system("cls");
 			cat7();
 			day7();
-			break;
+
 		case 8:
 			system("cls");
 			cat8();
 			day8();
-			break;
+
 		case 9:
 			system("cls");
 			cat9();
 			day9();
-			break;
+
 		case 10:
 			system("cls");
 			cat10();
 			day10();
-			break;
 
 
 		}
@@ -1075,7 +1068,7 @@ int gameLogic() {
 		if (key == 13) {
 				dayCnt++;
 		}
-		
+		break;
 	}
 	return 0;
 }

@@ -6,107 +6,224 @@
 #include <windows.h>
 #include <stdio.h>
 
-#define WIDTH 80    // 가로
-#define HEIGHT 20   // 높이
-#define MAX_STARS 5 // 생성할 별의 최대 개수
-#define STAR '@'
-#define PLAYER '^'
-
-int playerX = WIDTH / 2;
+#define Right 77
+#define Left 75
+#define WIDTH 80  //가로
+#define HEIGHT 20 //높이
+#define GAME_DURATION 60  // 게임 시간(초)
+#define MAPX 3
+#define MAPY 2
+int starX = 0;
+int starY = 0;
 int score = 0;
+int x = 0;
+int y = 0;
 
-// 각 별의 X 좌표와 Y 좌표를 저장하는 배열
-int starX[MAX_STARS];
-int starY[MAX_STARS];
+time_t startTime;
 
-void initializeStars() {
-    for (int i = 0; i < MAX_STARS; i++) {
-        starX[i] = (rand() % (WIDTH / 10)) * 10; // 10의 배수 위치에 별 생성
-        starY[i] = rand() % (HEIGHT / 2);       // 상단 반쪽에 랜덤 위치에 별 생성
-    }
+void timeCnt() {
+    time_t currentTime = time(NULL);
+    int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
+    printf("남은 시간: %d\n", remainingTime);
 }
 
-void drawBoard(int remainingTime) {
-    system("cls");
-    for (int y = 0; y < HEIGHT; y++) {
-        for (int x = 0; x < WIDTH; x++) {
-            if (y == HEIGHT - 1 && x == playerX)
-                putchar(PLAYER);
-            else {
-                int isStar = 0;
-                for (int i = 0; i < MAX_STARS; i++) {
-                    if (y == starY[i] && x == starX[i]) {
-                        putchar(STAR);
-                        isStar = 1;
-                        break;
-                    }
+void playBoard() {
+    gotoxy(20, 10);
+    printf("■■■■■■■■■■■■■■■■■■\n");
+    gotoxy(20, 11);
+    printf("■                                ■\n");
+    gotoxy(20, 12);
+    printf("■                                ■\n");
+    gotoxy(20, 13);
+    printf("■                                ■\n");
+    gotoxy(20, 14);
+    printf("■                                ■\n");
+    gotoxy(20, 15);
+    printf("■                                ■\n");
+    gotoxy(20, 16);
+    printf("■                                ■\n");
+    gotoxy(20, 17);
+    printf("■                                ■\n");
+    gotoxy(20, 18);
+    printf("■                                ■\n");
+    gotoxy(20, 19);
+    printf("■                                ■\n");
+    gotoxy(20, 20);
+    printf("■                                ■\n");
+    gotoxy(20, 21);
+    printf("■                                ■\n");
+    gotoxy(20, 22);
+    printf("■                                ■\n");
+    gotoxy(20, 23);
+    printf("■                                ■\n");
+    gotoxy(20, 24);
+    printf("■                                ■\n");
+    gotoxy(20, 25);
+    printf("■■■■■■■■■■■■■■■■■■\n");
+
+    int playerX = 22, playerY = 22;
+    starX = (rand() % (30)) + 22;
+    starY = 11;
+    gotoxy(playerX, playerY);
+    printf(" /＼/＼ \n");
+    gotoxy(playerX, playerY + 1);
+    printf("( o.o ) \n");
+    gotoxy(playerX, playerY + 2);
+    printf(" > ^ <  \n");
+
+    gotoxy(starX, starY);
+    printf("★");
+    while (1) {
+        // 별이 플레이어에게 닿았을 때
+        if (starX == playerX && starY == playerY+1) {
+            score++;
+
+            starX = (rand() % (30)) + 22; // 새로운 별의 가로 위치
+            starY = 11; // 별의 세로 위치 초기화
+        }
+
+        // 별이 아래로 떨어지는 로직
+        if (starY < 24) {
+            Sleep(100);
+            gotoxy(starX, starY);
+            printf("   "); // 이전 위치의 별 지우기
+            starY++; // 아래로 이동
+            gotoxy(starX, starY);
+            printf("★"); // 새로운 위치에 별 출력
+        }
+        else {
+            gotoxy(starX, starY);
+            printf("   ");
+            starX = (rand() % (30)) + 22; // 새로운 별의 가로 위치
+            starY = 11; // 별의 세로 위치 초기화
+        }
+
+        // 키 입력을 기다리지 않고 반복하는 동안 계속해서 확인
+        if (_kbhit()) {
+            char key = _getch();
+            switch (key) {
+            case 75: // 왼쪽 이동
+                if (playerX > 20) {
+                    gotoxy(playerX, playerY);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 1);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 2);
+                    printf("      ");
+                    playerX--;
+                    gotoxy(playerX, playerY);
+                    printf(" /＼/＼ \n");
+                    gotoxy(playerX, playerY + 1);
+                    printf("( o.o ) \n");
+                    gotoxy(playerX, playerY + 2);
+                    printf(" > ^ <  \n");
                 }
-                if (!isStar)
-                    putchar(' ');
+                break;
+            case 77: // 오른쪽 이동
+                if (playerX < 45) {
+                    gotoxy(playerX, playerY);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 1);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 2);
+                    printf("      ");
+                    playerX++;
+                    gotoxy(playerX, playerY);
+                    printf(" /＼/＼ \n");
+                    gotoxy(playerX, playerY + 1);
+                    printf("( o.o ) \n");
+                    gotoxy(playerX, playerY + 2);
+                    printf(" > ^ <  \n");
+                }
+                break;
             }
         }
-        putchar('\n');
     }
-
-    gotoxy(0, 22);
-    printf("Score: %d\n", score);
-
-    gotoxy(2, 1);
-    printf("남은시간: %d초\n", remainingTime);
 }
-
-void updateStars() {
-    for (int i = 0; i < MAX_STARS; i++) {
-        starY[i]++;
-        if (starY[i] >= HEIGHT - 1) {
-            if (starX[i] == playerX) {
-                score++;
-            }
-            starX[i] = (rand() % (WIDTH / 10)) * 10;
-            starY[i] = rand() % (HEIGHT / 2);
+//void drawBoard() {
+//    system("cls");
+//    // 게임의 남은 시간 계산
+//    time_t currentTime = time(NULL);
+//    int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
+//    printf("남은 시간: %d\n", remainingTime);
+//
+//    for (int y = 0; y < HEIGHT; y++) {
+//        for (int x = 0; x < WIDTH; x++) {
+//            if (y == HEIGHT - 1 && x == playerX)
+//                putchar(PLAYER);
+//            else if (y == starY && x == starX)
+//                putchar(STAR);
+//            else
+//                putchar(' ');
+//        }
+//        putchar('\n');
+//    }
+//}
+void updateStar() {
+    starY++;
+    if (starY == y - 1) {
+        if (starX == x) {
+            score++;
         }
+        starX = (rand() % (x / 10)) * 10;
+        starY = 0;
     }
     Sleep(100);
 }
 
-void move() {
-    if (_kbhit()) {
-        int key = _getch();
-        if (key == 75 && playerX > 0)
-            playerX -= 10;
-        else if (key == 77 && playerX < WIDTH - 1)
-            playerX += 10;
-        else if (key == 'q')
-            exit(0);
-    }
-    Sleep(1);
-}
+//void move() {
+//  
+//    if (_kbhit()) {
+//    char key = _getch();
+//    if (key == 75 && playerX > 0)
+//        playerX -= 10;
+//    else if (key == 77 && playerX < WIDTH - 1)
+//        playerX += 10;
+//    }
+//    Sleep(1);
+//}
 
-void catArt() {
-    printf(" /＼/＼ \n");
-    printf("( o.o ) \n");
-    printf(" > ^ <  \n");
-}
 
 int miniGame() {
-    catArt();
-    drawBoard(60); // 초기 시간 (60초로 설정)
-    time_t startTime = time(0); // 게임 시작 시간 기록
-
-    initializeStars();
-
+    system("cls");
+    startTime = time(NULL);     // 게임 시작 시간 초기화
     while (1) {
-        int remainingTime = 60 - (time(0) - startTime);
-        if (remainingTime <= 0) {
-            system("cls");
-            printf("시간종료! 게임오버.\n\n");
-            printf("최종스코어 : %d\n", score);
-            break;
-        }
-        drawBoard(remainingTime);
-        updateStars();
-        move();
+        // 현재 시간 갱신
+        time_t currentTime = time(NULL);
+        // 게임이 지정된 시간 이상 지났는지 확인
+        if (difftime(currentTime, startTime) >= GAME_DURATION)
+            break;      // 시간 종료
+        timeCnt();
+        playBoard();
     }
+
+    // 게임 종료 후 게임 오버 메시지 출력
+    system("cls");
+    int x = 17, y = 5;
+    gotoxy(x, y);
+    printf(" ▣▣▣      ▣▣▣     ▣    ▣   ▣▣▣▣\n");
+    gotoxy(x, y + 1);
+    printf("▣     ▣  ▣      ▣  ▣ ▣▣ ▣  ▣\n");
+    gotoxy(x, y + 2);
+    printf("▣         ▣▣▣▣▣  ▣  ▣  ▣  ▣▣▣\n");
+    gotoxy(x, y + 3);
+    printf("▣    ▣▣ ▣      ▣  ▣  ▣  ▣  ▣\n");
+    gotoxy(x, y + 4);
+    printf(" ▣▣▣▣  ▣      ▣  ▣      ▣  ▣▣▣▣\n");
+    gotoxy(x + 1, y + 6);
+    printf("  ■■■   ■      ■ ■■■■  ■■■■\n");
+    gotoxy(x + 1, y + 7);
+    printf(" ■     ■ ■      ■ ■        ■      ■\n");
+    gotoxy(x + 1, y + 8);
+    printf(" ■     ■  ■    ■  ■■■    ■■■■\n");
+    gotoxy(x + 1, y + 9);
+    printf(" ■     ■   ■  ■   ■        ■      ■\n");
+    gotoxy(x + 1, y + 10);
+    printf("  ■■■       ■     ■■■■  ■      ■\n\n");
+    gotoxy(x + 16, y + 15);
+    printf("YOUR SCORE: %d\n", score);
+
     return 0;
 }
+
 

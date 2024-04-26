@@ -5,6 +5,7 @@
 #include <conio.h>
 #include <windows.h>
 
+#define WIDTH 80  //가로
 #define WIDTH 80   //가로
 #define HEIGHT 20 //높이
 #define STAR '@'
@@ -77,7 +78,7 @@ void move() {
         else if (key == 'q') {
             exit(0);
     }
-    Sleep(10);
+    Sleep(1);
 }
 
         }

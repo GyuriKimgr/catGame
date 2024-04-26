@@ -79,7 +79,6 @@ void playBoard() {
             starX = (rand() % (30)) + 22; // 새로운 별의 가로 위치
             starY = 11; // 별의 세로 위치 초기화
         }
-
         // 별이 아래로 떨어지는 로직
         if (starY < 24) {
             Sleep(100);
@@ -90,8 +89,15 @@ void playBoard() {
             printf("★"); // 새로운 위치에 별 출력
         }
         else {
+
             gotoxy(starX, starY);
-            printf("   ");
+            printf("   \n");
+            gotoxy(playerX, playerY);
+            printf(" /＼/＼ \n");
+            gotoxy(playerX, playerY + 1);
+            printf("( o.o ) \n");
+            gotoxy(playerX, playerY + 2);
+            printf(" > ^ <  \n");
             starX = (rand() % (30)) + 22; // 새로운 별의 가로 위치
             starY = 11; // 별의 세로 위치 초기화
         }

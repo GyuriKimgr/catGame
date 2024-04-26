@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <windows.h>
 
-#define WIDTH 60   //가로
+#define WIDTH 80  //가로
 #define HEIGHT 20 //높이
 #define STAR '@'
 #define PLAYER '^'
@@ -43,7 +43,7 @@ void updateStar() {
         starX = (rand() % (WIDTH / 10)) * 10;
         starY = 0;
     }
-    Sleep(10);
+    Sleep(100);
 }
 
 void move() {
@@ -57,7 +57,7 @@ void move() {
         else if (key == 'q')
             exit(0);
     }
-    Sleep(10);
+    Sleep(1);
 }
 
 

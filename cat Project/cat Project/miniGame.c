@@ -3,9 +3,10 @@
 
 #include <time.h>
 #include <conio.h>
+#include <windows.h>
 
-#define WIDTH 20
-#define HEIGHT 10
+#define WIDTH 80   //가로
+#define HEIGHT 20 //높이
 #define STAR '@'
 #define PLAYER '^'
 
@@ -13,7 +14,6 @@ int playerX = WIDTH / 2;
 int starX = 0;
 int starY = 0;
 int score = 0;
-
 
 
 void drawBoard() {
@@ -40,14 +40,23 @@ void updateStar() {
         if (starX == playerX) {
             score++;
         }
-        starX = rand() % WIDTH;
+        starX = (rand() % (WIDTH / 10)) * 10;
         starY = 0;
     }
+    Sleep(100);
 }
 
 
 
 void move() {
+  
+    if (_kbhit()) {
+    int key = _getch();
+    if (key == 75 && playerX > 0)
+        playerX -= 10;
+    else if (key == 77 && playerX < WIDTH - 1)
+        playerX += 10;
+        else if (key == 'q')
     if (_kbhit()) {
         int key = _getch();
 
@@ -67,9 +76,12 @@ void move() {
         }
         else if (key == 'q') {
             exit(0);
+    }
+    Sleep(10);
+}
+
         }
     }
-}
     
 
     
@@ -77,7 +89,7 @@ void move() {
 
 
 // 고양이 ASCII 아트
-int catArt() {
+void catArt() {
     printf(" /＼/＼ \n");
     printf("( o.o ) \n");
     printf(" > ^ <  \n");
@@ -89,6 +101,15 @@ int catArt() {
 
 
 int miniGame() {
+    system("cls");
+    catArt();
+    drawBoard();
+    while (1) {
+        drawBoard();
+        updateStar();
+        move();
+    }
+    return 0;
     catArt();
 
     while (1) {
@@ -97,7 +118,6 @@ int miniGame() {
         catArt();
         drawBoard();
         updateStar();
-        Sleep(100);
     }
     
 

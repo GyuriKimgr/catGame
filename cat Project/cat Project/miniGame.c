@@ -2,6 +2,7 @@
 #include "miniGame.h"
 
 #include <time.h>
+#include <conio.h>
 
 #define WIDTH 20
 #define HEIGHT 10
@@ -12,6 +13,8 @@ int playerX = WIDTH / 2;
 int starX = 0;
 int starY = 0;
 int score = 0;
+
+
 
 void drawBoard() {
     system("cls");
@@ -42,20 +45,34 @@ void updateStar() {
     }
 }
 
+
+
 void move() {
-    char key = _getch();
-    if (key == 0 || key == 224) { // 방향키 입력 확인
-        key = _getch(); // 실제 방향키 값 가져오기
-        if (key == 75 && playerX > 0)
-            playerX--;
-        else if (key == 77 && playerX < WIDTH - 1)
-            playerX++;
-        else if (key == 'q')
+    if (_kbhit()) {
+        int key = _getch();
+
+        if (key == 224){
+            key = _getch();
+
+            switch (key) {
+            case 75: // 왼쪽 화살표
+                if (playerX > 0)
+                    playerX--;
+                    break;
+            case 77: // 오른쪽 화살표
+                if (playerX < WIDTH - 1)
+                    playerX++;
+                    break;
+            }
+        }
+        else if (key == 'q') {
             exit(0);
+        }
     }
 }
+    
 
-
+    
 
 
 
@@ -64,7 +81,7 @@ int catArt() {
     printf(" /＼/＼ \n");
     printf("( o.o ) \n");
     printf(" > ^ <  \n");
-};
+}
 
 
 
@@ -72,10 +89,17 @@ int catArt() {
 
 
 int miniGame() {
-    system("cls");
     catArt();
-    move();
-    drawBoard();
 
-    updateStar();
+    while (1) {
+        system("cls");
+        move();
+        catArt();
+        drawBoard();
+        updateStar();
+        Sleep(100);
+    }
+    
+
+
 }

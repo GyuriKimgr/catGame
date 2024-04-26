@@ -89,7 +89,7 @@
 		gotoxy(x, y + 8);
 		printf("                               ＼`        `/\n");
 		gotoxy(x, y + 9);
-		printf("                               | = ^ Y ^ = |              ◇\n");
+		printf("                               | = @ Y @ = |              ◇\n");
 		gotoxy(x, y + 10);
 		printf("                  ◆            ＼__ ^  __/\n");
 		gotoxy(x, y + 11);

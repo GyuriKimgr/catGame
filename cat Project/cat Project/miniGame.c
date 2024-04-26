@@ -6,14 +6,14 @@
 #include <windows.h>
 
 #define WIDTH 80  //가로
-#define HEIGHT 20 //높이
+#define HEIGHT 25 //높이
 #define STAR '@'
 #define PLAYER '^'
 #define GAME_DURATION 60  // 게임 시간(초)
 
 int playerX = WIDTH / 2;
 int starX = 0;
-int starY = 0;
+int starY = HEIGHT / 3;
 int score = 0;
 
 time_t startTime;
@@ -21,13 +21,7 @@ time_t startTime;
 
 void drawBoard() {
     system("cls");
-
-    // 게임의 남은 시간 계산
-    time_t currentTime = time(NULL);
-    int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
-    printf("남은 시간: %d\n", remainingTime);
-
-
+   
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             if (y == HEIGHT - 1 && x == playerX)
@@ -39,7 +33,14 @@ void drawBoard() {
         }
         putchar('\n');
     }
+
+    int x = 0, y = 28;
+    gotoxy(x, y);
     printf("Score: %d\n", score);
+    // 게임의 남은 시간 계산
+    time_t currentTime = time(NULL);
+    int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
+    printf("남은 시간: %d\n", remainingTime);
 }
 
 
@@ -51,7 +52,7 @@ void updateStar() {
             score++;
         }
         starX = (rand() % (WIDTH / 10)) * 10;
-        starY = 0;
+        starY = HEIGHT / 3;
     }
     Sleep(100);
 }
@@ -87,6 +88,7 @@ void catArt() {
 
 
 int miniGame() {
+
     system("cls");
     catArt();
     drawBoard();

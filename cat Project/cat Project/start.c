@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <conio.h>
 #include"start.h"
+#include"miniGame.h"
+int code = 0;
 
 #pragma once
 
@@ -46,7 +48,7 @@ int story() {
 	printf("□                                                                            ■\n");
 	slowPrint(1, "■      매일매일이 똑같은 갑갑한 일상의 반복..                                □\n");
 	printf("□                                                                            ■\n");
-	slowPrint(1, "■      지루하다.평생을 이렇게 살아가는걸까 ?                                 □\n");
+	slowPrint(1, "■      지루하다. 평생을 이렇게 살아가는걸까 ?                                □\n");
 	printf("□                                                                            ■\n");
 	slowPrint(1, "■      ... 어, 저게 뭐지?                                                    □\n");
 	printf("□                                                                            ■\n");
@@ -78,6 +80,8 @@ int drawmenu() {
 		gotoxy(x, 18);
 		printf("시작하기\n");
 		gotoxy(x, 20);
+		printf("미니게임\n");
+		gotoxy(x, 22);
 		printf("게임종료\n");
 
 
@@ -87,70 +91,97 @@ int drawmenu() {
 			printf("시작하기\n");
 
 		}
-		else {
+		else if(y == 20){
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 			gotoxy(x, 18);
 			printf("시작하기\n");
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 			gotoxy(x, 20);
+			printf("미니게임\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 22);
 			printf("게임종료\n");
 		}
+		else{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 18);
+			printf("시작하기\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(x, 20);
+			printf("미니게임\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(x, 22);
+			printf("게임종료\n");
+			}
 
 		char ch = _getch();
 
 
 		switch (ch) {
 		case 72:
-			if (y > 18)--y;
+			if (y > 18)y-=2;
 			break;
 		case 80:
-			if (y < 20)++y;
+			if (y < 22)y+=2;
 			break;
 		case 13:
 			if (y == 18)return 1;
+			if (y == 20)return 2;
 			else return 0;
-
 		}
 	}
 }
 
 int startScreen(void) {
-	setconsleview();
+	while (1) {
+		setconsleview();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 
-	printf("■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□\n");
-	printf("□                                                                            ■\n");
-	printf("■                 _  _  _ _|_   _ _ _|_   _  _ _  . _  __|_                  □\n");
-	printf("□                 _VV(/_(/_ |   (_(_| |   |_)| (_) |(/_(_ |             *    ■\n");
-	printf("■                                        |       L|                          □\n");
-	printf("□    '      *         *          ,MMM8&&&&.                     *            ■\n");
-	printf("■                          *     MMM88&&&&&                                  □\n");
-	printf("□                                MMMM88&&&&    .    *                        ■\n");
-	printf("■      *                         MM88&&&&&&                                  □\n");
-	printf("□                   *            'MM88&&&&'                   *              ■\n");
-	printf("■            '                         *                                *    □\n");
-	printf("□              *       /|/|_      __/||      *                               ■\n");
-	printf("■                     /    -|    /-  ~|  .             *                     □\n");
-	printf("□                    |    = Y = T_ =  /                                      ■\n");
-	printf("■        '       *    )==* (`    `) ~(                             *         □\n");
-	printf("□  *                 /     |     /    |          *                           ■\n");
-	printf("■                   /      |     ) ~  (                                      □\n");
-	printf("□                  /       |    /    ~ |                                     ■\n");
-	printf("■             *   |        /   |~   ~  |                                     □\n");
-	printf("□    __________/|_|__    _/_/|_|__~____/_/|_/|_/|_/|_/|_                     ■\n");
-	printf("■    |  |  |  |  |  | ) ) |  |  | ((  |  |  |  |  |  |                       □\n");
-	printf("□    |  |  |  |  |  | )_) |  |  |  )) |  |  |  |  |  |                       ■\n");
-	printf("■    |  |  |  |  |  |  |  |  |  | (/  |  |  |  |  |  |                       □\n");
-	printf("□                                                                            ■\n");
-	printf("■                                                                            □\n");
-	printf("□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■\n");
+		printf("■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□\n");
+		printf("□                                                                            ■\n");
+		printf("■                 _  _  _ _|_   _ _ _|_   _  _ _  . _  __|_                  □\n");
+		printf("□                 _VV(/_(/_ |   (_(_| |   |_)| (_) |(/_(_ |             *    ■\n");
+		printf("■                                        |       L|                          □\n");
+		printf("□    '      *         *          ,MMM8&&&&.                     *            ■\n");
+		printf("■                          *     MMM88&&&&&                                  □\n");
+		printf("□                                MMMM88&&&&    .    *                        ■\n");
+		printf("■      *                         MM88&&&&&&                                  □\n");
+		printf("□                   *            'MM88&&&&'                   *              ■\n");
+		printf("■            '                         *                                *    □\n");
+		printf("□              *       /|/|_      __/||      *                               ■\n");
+		printf("■                     /    -|    /-  ~|  .             *                     □\n");
+		printf("□                    |    = Y = T_ =  /                                      ■\n");
+		printf("■        '       *    )==* (`    `) ~(                             *         □\n");
+		printf("□  *                 /     |     /    |          *                           ■\n");
+		printf("■                   /      |     ) ~  (                                      □\n");
+		printf("□                  /       |    /    ~ |                                     ■\n");
+		printf("■             *   |        /   |~   ~  |                                     □\n");
+		printf("□    __________/|_|__    _/_/|_|__~____/_/|_/|_/|_/|_/|_                     ■\n");
+		printf("■    |  |  |  |  |  | ) ) |  |  | ((  |  |  |  |  |  |                       □\n");
+		printf("□    |  |  |  |  |  | )_) |  |  |  )) |  |  |  |  |  |                       ■\n");
+		printf("■    |  |  |  |  |  |  |  |  |  | (/  |  |  |  |  |  |                       □\n");
+		printf("□                                                                            ■\n");
+		printf("■                                                                            □\n");
+		printf("□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■\n");
 
-	
-	int code = drawmenu();
-	if (code == 1) {
-		story();
-	}
-	else {
-		exit(0);
+
+		int code = drawmenu();
+		if (code == 1) {
+			story();
+		}
+		else if (code == 2) {
+			mini = 1;
+			miniGame();
+			if (miniGame == 3) {
+				continue;
+			}
+			else if (miniGame == 0) {
+				exit(0);
+			}break;
+		}
+		else if (code == 0) {
+			exit(0);
+		}
 	}
 	return 0;
 }

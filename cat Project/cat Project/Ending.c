@@ -1,31 +1,192 @@
-#define _CRT_SECURE_NO_WARNINGS
+ï»¿#include "start.h"
+#include "day.h"
+#include "Ending.h"
 
-#include <stdio.h>
-int main() {
-	int score = 0;
-	if (-23 <= score && score <= 10) {
-		printf("Æò¼Òº¸´Ù Áø»óÀÌ ¸¹¾Æ ÂüÁö ¸øÇÏ°í Áø»ó ¼Õ´ÔÀÇ ¾ó±¼À» ¶§·Á¹ö·È´Ù...\n");
-		printf("Çä... Á¡ÀåÀÌ ³»ÀÏºÎÅÍ ³ª¿ÀÁö ¾Ê¾Æµµ µÈ´Ù°í Çß´Ù.\n");
-		printf("¾µ¾µÇÏ°Ô ÁıÀ¸·Î µ¹¾Æ°£´Ù... -> ÀÌÁ¦ µÎ¹ø´Ù½Ã °í¾çÀÌ¸¦ º¸Áö ¸øÇÏ°Ô µÇ¾ú´Ù.\n");
+
+	int drawing1() {		// ë² ë“œì—”ë”©
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                                << BAD ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                   Total: %d\n", heart);
+		gotoxy(x, y + 4);
+		printf("                                        ( ã…  ã…  )\n");
+		gotoxy(x, y + 5);
+		printf("           ____________                   V \n");
+		gotoxy(x, y + 6);
+		printf("          |   |      | ï¼¼\n");
+		gotoxy(x, y + 7);
+		printf("          |   |      |   ï¼¼________\n");
+		gotoxy(x, y + 8);
+		printf("          |   |ì°¸ì†Œì£¼|     ____|_|_| .\n");
+		gotoxy(x, y + 9);
+		printf("          |   |      |    /             .\n");
+		gotoxy(x, y + 10);
+		printf("          |___|______|__/           ____.____\n");
+		gotoxy(x, y + 11);
+		printf("                                   |         |\n");
+		gotoxy(x, y + 12);
+		printf("                                    |~~~~ ~~~|\n");
+		gotoxy(x, y + 13);
+		printf("                                     |__ì”__|\n");
+
+}
+
+	int drawing2() {	// ë…¸ë©€ì—”ë”©
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                              << NOMAL ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                  Total: %d\n", heart);
+		gotoxy(x, y + 4);                                       
+		printf("                   â™¥          |ï¼¼  _  /|            â™¥ \n");
+		gotoxy(x, y + 5);
+		printf("                    â™¥         /   > <  ï¼¼         â™¥\n");
+		gotoxy(x, y + 6);
+		printf("                        (''ï¼¼ {   = Y =   } /'')\n");
+		gotoxy(x, y + 7);
+		printf("                         ï¼¼ ï¼¼  ï¼¼_ ^  _/   / /\n");
+		gotoxy(x, y + 8);
+		printf("                           ï¼¼ ï¼¼/  *o*  ï¼¼//\n");
+		gotoxy(x, y + 9);
+		printf("                               |          |\n");
+		gotoxy(x, y + 10);
+		printf("                               |          |\n");
+		gotoxy(x, y + 11);
+		printf("                               /   // ï¼¼  ï¼¼\n");
+		gotoxy(x, y + 12);
+		printf("                             /   / ||   ï¼¼ ï¼¼\n");
+		gotoxy(x, y + 13);
+		printf("                     ((    (,,_/   ))     ï¼¼_,,)   ))\n");
+		gotoxy(x, y + 14);
+		printf("                                  (/\n");
 	}
 
-	else if (11 <= score && score <= 22) {
-		printf("Èûµé¾ú´ø ÇÏ·ç°¡ ³¡³µ´Ù. ÁıÀ¸·Î ¾ó¸¥ °¡¾ßÁö~\n");
-		printf("(°í¾çÀÌ°¡ Â§~~)\n");
-		printf("Àú³á¿¡ º¸ÀÌÁö ¾Ê¾Ò´Âµ¥ ¿À´ÃÀº À¢ÀÏÀÌÁö? -> °í¾çÀÌ°¡ ´Ş·Á¿Í¼­ ÇÃ·¹ÀÌ¾î Ç°¿¡ ¾È±ä´Ù.\n");
+	int drawing3() { // íŠ¸ë£¨ì—”ë”©
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                               << TRUE ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                  Total: %d\n", heart);
+		gotoxy(x, y + 4);
+		printf("                                    _____\n");
+		gotoxy(x, y + 5);
+		printf("                                   `=====`\n");
+		gotoxy(x, y + 6);
+		printf("                                   .  |  .\n");
+		gotoxy(x, y + 7);
+		printf("                      (~~~~~ï¼¼   ï¼¼`-'''-'/      /~~~~~)\n");
+		gotoxy(x, y + 8);
+		printf("                       ~~(~~~ï¼¼    } 6 6 {     /~~~)~~\n");
+		gotoxy(x, y + 9);
+		printf("                           ~(~~ï¼¼ =.  Y  ,=   /~~)~\n");
+		gotoxy(x, y + 10);
+		printf("                             ~~(    /^^^ï¼¼    )~~\n");
+		gotoxy(x, y + 11);
+		printf("                                  /       ï¼¼\n");
+		gotoxy(x, y + 12);
+		printf("                                  (  )-(  )\n");
+		gotoxy(x, y + 13);
+		printf("                                  '''   '''\n");
 	}
 
-	else if (23 <= score && score <= 31) {
-		printf("Èûµé¾ú´ø ÇÏ·ç°¡ ³¡³µ´Ù. ÁıÀ¸·Î ¾ó¸¥ °¡¾ßÁö~\n");
-		printf("(°í¾çÀÌ°¡ Â§~~)\n");
-		printf("Àú³á¿¡ º¸ÀÌÁö ¾Ê¾Ò´Âµ¥ ¿À´ÃÀº À¢ÀÏÀÌÁö? -> °í¾çÀÌ°¡ ´Ş·Á¿Í¼­ ÇÃ·¹ÀÌ¾î Ç°¿¡ ¾È±ä´Ù.\n");
+
+	int drawing4() {	//íˆë“ ì—”ë”©
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                               << HIDDEN ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                   Total: %d\n", heart);
+		gotoxy(x, y + 4);  
+		printf("            *             *                                 *             *\n");
+		gotoxy(x, y + 5);
+		printf("    *                   *         |ï¼¼=/|            â™¥          *             *\n");
+		gotoxy(x, y + 6);
+		printf("                  *               /6 6ï¼¼             â™¥               *\n");
+		gotoxy(x, y + 7);
+		printf("                                 =ï¼¼ Y_/=         â™¥\n");
+		gotoxy(x, y + 8);
+		printf("                                  /|||ï¼¼  /      ====\n");
+		gotoxy(x, y + 9);
+		printf("                                 ( |||  )/       !!!!\n");
+		gotoxy(x, y + 10);
+		printf("                               =========================\n");
+		gotoxy(x, y + 11);
+		printf("                             XXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		gotoxy(x, y + 12);
+		printf("                           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		gotoxy(x, y + 13);
+		printf("                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		gotoxy(x, y + 14);
+		printf("                           ||     |-|-|          |-|-|    ||\n");
+		gotoxy(x, y + 15);
+		printf("               |ï¼¼=/|      ||     #####          #####    ||\n");
+		gotoxy(x, y + 16);
+		printf("               )    (      ||     _____   @@@@   _____    ||\n");
+		gotoxy(x, y + 17);
+		printf("              =ï¼¼  _/=     ||     |-|-|   @@*@   |-|-|    ||\n");
+		gotoxy(x, y + 18);
+		printf("            ï¼¼  /   ï¼¼     ||     #####   @@@@   #####    ||\n");
+		gotoxy(x, y + 19);
+		printf("             ï¼¼(______)   ****************____***************\n");
+		
 	}
 
 
-	int coice = 0;
-	coice += 1;
-	if (coice = 1) {
-		printf("°í¾çÀÌ¸¦ µû¶ó°¡º¸¸é... Àú ¸Ö¸® ÀÛÀº °í¾çÀÌ°¡ º¸ÀÎ´Ù.\n");
-		printf("»óÅÂ¸¦ »ìÆìº¸´Ï ¾ÆÇÂ °Í °°´Ù. ±ÙÃ³ÀÇ µ¿¹°º´¿øÀ¸·Î °¡ Ä¡·á¸¦ ÇØÁÖÀÚ -> µÎ¸¶¸®ÀÇ °í¾çÀÌ¸¦ Å°¿ì°Ô µÈ´Ù.. \n");
+int hidden_ending() {	//íˆë“ ì—”ë”©
+	drawing4();
+	printf("================================================================================\n");
+	slowPrint(1, "ê³ ì–‘ì´ë¥¼ ë”°ë¼ê°€ë³´ë©´... ì € ë©€ë¦¬ ì‘ì€ ê³ ì–‘ì´ê°€ ë³´ì¸ë‹¤.\n");
+	slowPrint(1, "ìƒíƒœë¥¼ ì‚´í´ë³´ë‹ˆ ì•„í”ˆ ê²ƒ ê°™ë‹¤. ê·¼ì²˜ì˜ ë™ë¬¼ë³‘ì›ìœ¼ë¡œ ê°€ ì¹˜ë£Œë¥¼ í•´ì£¼ì.\n");
+	slowPrint(1, ">> ë‘ë§ˆë¦¬ì˜ ê³ ì–‘ì´ ì§‘ì‚¬ê°€ ë˜ì—ˆë‹¤. (~ï¿£â–½ï¿£)~ \n");
+	printf("================================================================================\n");
+	exit(0);
+}
+
+
+int Ending() {
+	setconsleview();
+
+	if (-23 <= heart && heart <= 10) { // ë² ë“œì—”ë”©
+		drawing1();
+		printf("================================================================================\n");
+		slowPrint(1, "í‰ì†Œë³´ë‹¤ ì§„ìƒì´ ë§ì•„ ì°¸ì§€ ëª»í•˜ê³  ì§„ìƒ ì†ë‹˜ì˜ ì–¼êµ´ì„ ë•Œë ¤ë²„ë ¸ë‹¤...\n");
+		slowPrint(1, "í—‰... ì ì¥ì´ ë‚´ì¼ë¶€í„° ë‚˜ì˜¤ì§€ ì•Šì•„ë„ ëœë‹¤ê³  í–ˆë‹¤.\n");
+		slowPrint(1, "ì“¸ì“¸í•˜ê²Œ ì§‘ìœ¼ë¡œ ëŒì•„ê°„ë‹¤...\n");
+		slowPrint(1, ">> ì´ì œ ë‘ë²ˆë‹¤ì‹œ ê³ ì–‘ì´ë¥¼ ë³´ì§€ ëª»í•˜ê²Œ ë˜ì—ˆë‹¤...\n");
+		printf("================================================================================\n");
+	}
+
+	else if (11 <= heart && heart <= 19) {	// ë…¸ë©€ì—”ë”©
+		drawing2();
+		printf("================================================================================\n");
+		slowPrint(1, "í˜ë“¤ì—ˆë˜ í•˜ë£¨ê°€ ëë‚¬ë‹¤. ì§‘ìœ¼ë¡œ ì–¼ë¥¸ ê°€ì•¼ì§€~\n");
+		slowPrint(1, "ê³ ì–‘ì´ê°€ ì§ ~~ (=^oã……o^=)\n");
+		slowPrint(1, "ì €ë…ì— ë³´ì´ì§€ ì•Šì•˜ëŠ”ë° ì˜¤ëŠ˜ì€ ì›¬ì¼ì´ì§€?\n");
+		slowPrint(1, "ê³ ì–‘ì´ê°€ ë‹¬ë ¤ì™€ì„œ í”Œë ˆì´ì–´ í’ˆì— ì•ˆê¸´ë‹¤.\n");
+		slowPrint(1, "í”Œë ˆì´ì–´ê°€ ê³ ì–‘ì´ë¥¼ ì§‘ìœ¼ë¡œ ë°ë¦¬ê³  ê°„ë‹¤.\n");
+		slowPrint(1, ">> í”Œë ˆì´ì–´ëŠ” ì§‘ì‚¬ê°€ ë˜ì—ˆë‹¤.\n");
+		printf("================================================================================\n");
+
+	}
+
+	else if (20 <= heart && heart <= 31) {	// íŠ¸ë£¨ì—”ë”©
+		drawing3();
+		printf("================================================================================\n");
+		slowPrint(1, "í˜ë“¤ì—ˆë˜ í•˜ë£¨ê°€ ëë‚¬ë‹¤. ì§‘ìœ¼ë¡œ ì–¼ë¥¸ ê°€ì•¼ì§€~\n");
+		slowPrint(1, "ê³ ì–‘ì´ê°€ ì§ ~~ (=^>ã……<^=)\n");
+		slowPrint(1, "ì €ë…ì— ë³´ì´ì§€ ì•Šì•˜ëŠ”ë° ì˜¤ëŠ˜ì€ ì›¬ì¼ì´ì§€?\n");
+		slowPrint(1, "ê³ ì–‘ì´ê°€ ë‹¬ë ¤ì˜¤ë”ë‹ˆ í”Œë ˆì´ì–´ì˜ ë“±ì„ íƒ€ê³  ì˜¬ë¼ì™”ë‹¤.\n");
+		slowPrint(1, ">> ê³ ì–‘ì´ê°€ ì§‘ì‚¬ê°€ ë˜ì—ˆë‹¤.\n");
+		printf("================================================================================\n");
 	}
 }
+

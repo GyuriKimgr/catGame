@@ -16,8 +16,6 @@
 
 int starX = 0;
 int starY = 0;
-int playerX = WIDTH / 2;
-int playerY = HEIGHT - 3;
 int score = 0;
 int x = 0;
 int y = 0;

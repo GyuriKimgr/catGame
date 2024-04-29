@@ -128,52 +128,60 @@ int drawmenu() {
 			if (y == 18)return 1;
 			if (y == 20)return 2;
 			else return 0;
-
 		}
 	}
 }
 
 int startScreen(void) {
-	setconsleview();
+	while (1) {
+		setconsleview();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 
-	printf("бсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбр\n");
-	printf("бр                                                                            бс\n");
-	printf("бс                 _  _  _ _|_   _ _ _|_   _  _ _  . _  __|_                  бр\n");
-	printf("бр                 _VV(/_(/_ |   (_(_| |   |_)| (_) |(/_(_ |             *    бс\n");
-	printf("бс                                        |       L|                          бр\n");
-	printf("бр    '      *         *          ,MMM8&&&&.                     *            бс\n");
-	printf("бс                          *     MMM88&&&&&                                  бр\n");
-	printf("бр                                MMMM88&&&&    .    *                        бс\n");
-	printf("бс      *                         MM88&&&&&&                                  бр\n");
-	printf("бр                   *            'MM88&&&&'                   *              бс\n");
-	printf("бс            '                         *                                *    бр\n");
-	printf("бр              *       /|/|_      __/||      *                               бс\n");
-	printf("бс                     /    -|    /-  ~|  .             *                     бр\n");
-	printf("бр                    |    = Y = T_ =  /                                      бс\n");
-	printf("бс        '       *    )==* (`    `) ~(                             *         бр\n");
-	printf("бр  *                 /     |     /    |          *                           бс\n");
-	printf("бс                   /      |     ) ~  (                                      бр\n");
-	printf("бр                  /       |    /    ~ |                                     бс\n");
-	printf("бс             *   |        /   |~   ~  |                                     бр\n");
-	printf("бр    __________/|_|__    _/_/|_|__~____/_/|_/|_/|_/|_/|_                     бс\n");
-	printf("бс    |  |  |  |  |  | ) ) |  |  | ((  |  |  |  |  |  |                       бр\n");
-	printf("бр    |  |  |  |  |  | )_) |  |  |  )) |  |  |  |  |  |                       бс\n");
-	printf("бс    |  |  |  |  |  |  |  |  |  | (/  |  |  |  |  |  |                       бр\n");
-	printf("бр                                                                            бс\n");
-	printf("бс                                                                            бр\n");
-	printf("брбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбс\n");
+		printf("бсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбр\n");
+		printf("бр                                                                            бс\n");
+		printf("бс                 _  _  _ _|_   _ _ _|_   _  _ _  . _  __|_                  бр\n");
+		printf("бр                 _VV(/_(/_ |   (_(_| |   |_)| (_) |(/_(_ |             *    бс\n");
+		printf("бс                                        |       L|                          бр\n");
+		printf("бр    '      *         *          ,MMM8&&&&.                     *            бс\n");
+		printf("бс                          *     MMM88&&&&&                                  бр\n");
+		printf("бр                                MMMM88&&&&    .    *                        бс\n");
+		printf("бс      *                         MM88&&&&&&                                  бр\n");
+		printf("бр                   *            'MM88&&&&'                   *              бс\n");
+		printf("бс            '                         *                                *    бр\n");
+		printf("бр              *       /|/|_      __/||      *                               бс\n");
+		printf("бс                     /    -|    /-  ~|  .             *                     бр\n");
+		printf("бр                    |    = Y = T_ =  /                                      бс\n");
+		printf("бс        '       *    )==* (`    `) ~(                             *         бр\n");
+		printf("бр  *                 /     |     /    |          *                           бс\n");
+		printf("бс                   /      |     ) ~  (                                      бр\n");
+		printf("бр                  /       |    /    ~ |                                     бс\n");
+		printf("бс             *   |        /   |~   ~  |                                     бр\n");
+		printf("бр    __________/|_|__    _/_/|_|__~____/_/|_/|_/|_/|_/|_                     бс\n");
+		printf("бс    |  |  |  |  |  | ) ) |  |  | ((  |  |  |  |  |  |                       бр\n");
+		printf("бр    |  |  |  |  |  | )_) |  |  |  )) |  |  |  |  |  |                       бс\n");
+		printf("бс    |  |  |  |  |  |  |  |  |  | (/  |  |  |  |  |  |                       бр\n");
+		printf("бр                                                                            бс\n");
+		printf("бс                                                                            бр\n");
+		printf("брбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбсбрбс\n");
 
-	
-	int code = drawmenu();
-	if (code == 1) {
-		story();
-	}
-	else if (code == 2) {
-		mini = 1;
-		miniGame();
-	}
-	else if (code == 0){
-		exit(0);
+
+		int code = drawmenu();
+		if (code == 1) {
+			story();
+		}
+		else if (code == 2) {
+			mini = 1;
+			miniGame();
+			if (miniGame == 3) {
+				continue;
+			}
+			else if (miniGame == 0) {
+				exit(0);
+			}break;
+		}
+		else if (code == 0) {
+			exit(0);
+		}
 	}
 	return 0;
 }

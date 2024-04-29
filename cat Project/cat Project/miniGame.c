@@ -10,7 +10,7 @@
 #define Left 75
 #define WIDTH 80  //가로
 #define HEIGHT 20 //높이
-#define GAME_DURATION 60  // 게임 시간(초)
+#define GAME_DURATION 10  // 게임 시간(초)
 #define MAPX 3
 #define MAPY 2
 
@@ -25,12 +25,13 @@ time_t startTime;
 void timeCnt() {
     time_t currentTime = time(NULL);
     int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
+    gotoxy(25, 3);
     int digitCount = printf("남은 시간: %d", remainingTime);
     for (int i = 0; i < digitCount; i++) {
         printf("\b"); //이전에 출력된 내용을 덮어씌웁니다.
     }
     // 덮어씌울 숫자 출력
-    gotoxy(11, 0);
+    gotoxy(35, 3);
     printf("%d \n", remainingTime);
 
 }
@@ -38,7 +39,8 @@ void timeCnt() {
 void playBoard() {
     system("cls");
     timeCnt();
-
+    gotoxy(25, 5);
+    printf("별을 0개 먹었다냥!");
     gotoxy(20, 10);
     printf("■■■■■■■■■■■■■■■■■■\n");
     gotoxy(20, 11);
@@ -92,6 +94,9 @@ void playBoard() {
             score++;
             starX = (rand() % (30)) + 22; // 새로운 별의 가로 위치
             starY = 11; // 별의 세로 위치 초기화
+
+            gotoxy(25, 5);
+            printf("별을 %d개 먹었다냥!", score);
         }
         // 별이 아래로 떨어지는 로직
         if (starY < 24) {
@@ -121,14 +126,14 @@ void playBoard() {
             char key = _getch();
             switch (key) {
             case 75: // 왼쪽 이동
-                if (playerX > 20) {
+                if (playerX > 22) {
                     gotoxy(playerX, playerY);
-                    printf("      ");
+                    printf("          ");
                     gotoxy(playerX, playerY + 1);
-                    printf("      ");
+                    printf("          ");
                     gotoxy(playerX, playerY + 2);
-                    printf("      ");
-                    playerX--;
+                    printf("          ");
+                    playerX-=4;
                     gotoxy(playerX, playerY);
                     printf(" /＼/＼ \n");
                     gotoxy(playerX, playerY + 1);
@@ -138,14 +143,14 @@ void playBoard() {
                 }
                 break;
             case 77: // 오른쪽 이동
-                if (playerX < 45) {
+                if (playerX < 42) {
                     gotoxy(playerX, playerY);
-                    printf("      ");
+                    printf("          ");
                     gotoxy(playerX, playerY + 1);
-                    printf("      ");
+                    printf("          ");
                     gotoxy(playerX, playerY + 2);
-                    printf("      ");
-                    playerX++;
+                    printf("          ");
+                    playerX+=4;
                     gotoxy(playerX, playerY);
                     printf(" /＼/＼ \n");
                     gotoxy(playerX, playerY + 1);
@@ -160,7 +165,6 @@ void playBoard() {
             return 0;
     }
     }
-
     void updateStar() {
         starY++;
         if (starY == y - 1) {
@@ -171,6 +175,44 @@ void playBoard() {
             starY = 0;
         }
         Sleep(100);
+    }
+
+    int menuMini() {
+        int z = 33, j = 22;
+        gotoxy(z, j);
+        while (1) {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+            gotoxy(z, 22);
+            printf("메인으로 돌아가기\n");
+            gotoxy(z, 23);
+            printf("종료\n");
+
+            if (j == 22) {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+                gotoxy(z, 22);
+                printf("메인으로 돌아가기\n");
+            }
+            else if (j == 23) {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+                gotoxy(z, 22);
+                printf("메인으로 돌아가기\n");
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+                gotoxy(z, 23);
+                printf("종료\n");
+            }
+            char ch = _getch();
+            switch (ch) {
+            case 72:
+                if (j > 22) j--;
+                break;
+            case 80:
+                if (j < 23) j++;
+                break;
+            case 13:
+                if (j == 22)return 3;
+                if (j == 23)return 0;
+            }
+        }
     }
 
     int miniGame() {
@@ -209,7 +251,13 @@ void playBoard() {
         printf(" ■     ■   ■  ■   ■        ■      ■\n");
         gotoxy(x + 1, y + 10);
         printf("  ■■■       ■     ■■■■  ■      ■\n\n");
-        gotoxy(x + 16, y + 15);
-        printf("YOUR SCORE: %d\n", score);
-        return 0;
+        gotoxy(x + 10, y + 15);
+        printf("나한테 별을 %d개만큼 먹여줬다냥!", score);
+        gotoxy(17, 19);
+        printf(" /＼/＼ \n");
+        gotoxy(17, 20);
+        printf("( o.o ) \n");
+        gotoxy(17, 21);
+        printf(" > ^ <  \n");
+        return menuMini();
     }

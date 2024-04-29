@@ -3,142 +3,142 @@
 #include "Ending.h"
 
 
-int drawing1() {		// 베드엔딩
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-	system("cls");
-	int x = 0, y = 0;
-	gotoxy(x, y + 1);
-	printf("                                << BAD ENDING >>\n");
-	gotoxy(x, y + 2);
-	printf("                                   Total: %d\n", heart);
-	gotoxy(x, y + 4);
-	printf("                                        ( ㅠ ㅠ )\n");
-	gotoxy(x, y + 5);
-	printf("           ____________                   V \n");
-	gotoxy(x, y + 6);
-	printf("          |   |      | ＼\n");
-	gotoxy(x, y + 7);
-	printf("          |   |      |   ＼________\n");
-	gotoxy(x, y + 8);
-	printf("          |   |참소주|     ____|_|_| .\n");
-	gotoxy(x, y + 9);
-	printf("          |   |      |    /             .\n");
-	gotoxy(x, y + 10);
-	printf("          |___|______|__/           ____.____\n");
-	gotoxy(x, y + 11);
-	printf("                                   |         |\n");
-	gotoxy(x, y + 12);
-	printf("                                    |~~~~ ~~~|\n");
-	gotoxy(x, y + 13);
-	printf("                                     |__잔__|\n");
+	int drawing1() {		// 베드엔딩
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                                << BAD ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                   Total: %d\n", heart);
+		gotoxy(x, y + 4);
+		printf("                                        ( ㅠ ㅠ )\n");
+		gotoxy(x, y + 5);
+		printf("           ____________                   V \n");
+		gotoxy(x, y + 6);
+		printf("          |   |      | ＼\n");
+		gotoxy(x, y + 7);
+		printf("          |   |      |   ＼________\n");
+		gotoxy(x, y + 8);
+		printf("          |   |참소주|     ____|_|_| .\n");
+		gotoxy(x, y + 9);
+		printf("          |   |      |    /             .\n");
+		gotoxy(x, y + 10);
+		printf("          |___|______|__/           ____.____\n");
+		gotoxy(x, y + 11);
+		printf("                                   |         |\n");
+		gotoxy(x, y + 12);
+		printf("                                    |~~~~ ~~~|\n");
+		gotoxy(x, y + 13);
+		printf("                                     |__잔__|\n");
 
 }
 
-int drawing2() {	// 노멀엔딩
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-	system("cls");
-	int x = 0, y = 0;
-	gotoxy(x, y + 1);
-	printf("                              << NOMAL ENDING >>\n");
-	gotoxy(x, y + 2);
-	printf("                                  Total: %d\n", heart);
-	gotoxy(x, y + 4);
-	printf("                   ♥          |＼  _  /|            ♥ \n");
-	gotoxy(x, y + 5);
-	printf("                    ♥         /   > <  ＼         ♥\n");
-	gotoxy(x, y + 6);
-	printf("                        (''＼ {   = Y =   } /'')\n");
-	gotoxy(x, y + 7);
-	printf("                         ＼ ＼  ＼_ ^  _/   / /\n");
-	gotoxy(x, y + 8);
-	printf("                           ＼ ＼/  *o*  ＼//\n");
-	gotoxy(x, y + 9);
-	printf("                               |          |\n");
-	gotoxy(x, y + 10);
-	printf("                               |          |\n");
-	gotoxy(x, y + 11);
-	printf("                               /   // ＼  ＼\n");
-	gotoxy(x, y + 12);
-	printf("                             /   / ||   ＼ ＼\n");
-	gotoxy(x, y + 13);
-	printf("                     ((    (,,_/   ))     ＼_,,)   ))\n");
-	gotoxy(x, y + 14);
-	printf("                                  (/\n");
-}
+	int drawing2() {	// 노멀엔딩
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                              << NOMAL ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                  Total: %d\n", heart);
+		gotoxy(x, y + 4);                                       
+		printf("                   ♥          |＼  _  /|            ♥ \n");
+		gotoxy(x, y + 5);
+		printf("                    ♥         /   > <  ＼         ♥\n");
+		gotoxy(x, y + 6);
+		printf("                        (''＼ {   = Y =   } /'')\n");
+		gotoxy(x, y + 7);
+		printf("                         ＼ ＼  ＼_ ^  _/   / /\n");
+		gotoxy(x, y + 8);
+		printf("                           ＼ ＼/  *o*  ＼//\n");
+		gotoxy(x, y + 9);
+		printf("                               |          |\n");
+		gotoxy(x, y + 10);
+		printf("                               |          |\n");
+		gotoxy(x, y + 11);
+		printf("                               /   // ＼  ＼\n");
+		gotoxy(x, y + 12);
+		printf("                             /   / ||   ＼ ＼\n");
+		gotoxy(x, y + 13);
+		printf("                     ((    (,,_/   ))     ＼_,,)   ))\n");
+		gotoxy(x, y + 14);
+		printf("                                  (/\n");
+	}
 
-int drawing3() { // 트루엔딩
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-	system("cls");
-	int x = 0, y = 0;
-	gotoxy(x, y + 1);
-	printf("                               << TRUE ENDING >>\n");
-	gotoxy(x, y + 2);
-	printf("                                  Total: %d\n", heart);
-	gotoxy(x, y + 4);
-	printf("                                    _____\n");
-	gotoxy(x, y + 5);
-	printf("                                   `=====`\n");
-	gotoxy(x, y + 6);
-	printf("                                   .  |  .\n");
-	gotoxy(x, y + 7);
-	printf("                      (~~~~~＼   ＼`-'''-'/      /~~~~~)\n");
-	gotoxy(x, y + 8);
-	printf("                       ~~(~~~＼    } 6 6 {     /~~~)~~\n");
-	gotoxy(x, y + 9);
-	printf("                           ~(~~＼ =.  Y  ,=   /~~)~\n");
-	gotoxy(x, y + 10);
-	printf("                             ~~(    /^^^＼    )~~\n");
-	gotoxy(x, y + 11);
-	printf("                                  /       ＼\n");
-	gotoxy(x, y + 12);
-	printf("                                  (  )-(  )\n");
-	gotoxy(x, y + 13);
-	printf("                                  '''   '''\n");
-}
+	int drawing3() { // 트루엔딩
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                               << TRUE ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                  Total: %d\n", heart);
+		gotoxy(x, y + 4);
+		printf("                                    _____\n");
+		gotoxy(x, y + 5);
+		printf("                                   `=====`\n");
+		gotoxy(x, y + 6);
+		printf("                                   .  |  .\n");
+		gotoxy(x, y + 7);
+		printf("                      (~~~~~＼   ＼`-'''-'/      /~~~~~)\n");
+		gotoxy(x, y + 8);
+		printf("                       ~~(~~~＼    } 6 6 {     /~~~)~~\n");
+		gotoxy(x, y + 9);
+		printf("                           ~(~~＼ =.  Y  ,=   /~~)~\n");
+		gotoxy(x, y + 10);
+		printf("                             ~~(    /^^^＼    )~~\n");
+		gotoxy(x, y + 11);
+		printf("                                  /       ＼\n");
+		gotoxy(x, y + 12);
+		printf("                                  (  )-(  )\n");
+		gotoxy(x, y + 13);
+		printf("                                  '''   '''\n");
+	}
 
 
-int drawing4() {	//히든엔딩
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
-	system("cls");
-	int x = 0, y = 0;
-	gotoxy(x, y + 1);
-	printf("                               << HIDDEN ENDING >>\n");
-	gotoxy(x, y + 2);
-	printf("                                   Total: %d\n", heart);
-	gotoxy(x, y + 4);
-	printf("            *             *                                 *             *\n");
-	gotoxy(x, y + 5);
-	printf("    *                   *         |＼=/|            ♥          *             *\n");
-	gotoxy(x, y + 6);
-	printf("                  *               /6 6＼             ♥               *\n");
-	gotoxy(x, y + 7);
-	printf("                                 =＼ Y_/=         ♥\n");
-	gotoxy(x, y + 8);
-	printf("                                  /|||＼  /      ====\n");
-	gotoxy(x, y + 9);
-	printf("                                 ( |||  )/       !!!!\n");
-	gotoxy(x, y + 10);
-	printf("                               =========================\n");
-	gotoxy(x, y + 11);
-	printf("                             XXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
-	gotoxy(x, y + 12);
-	printf("                           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
-	gotoxy(x, y + 13);
-	printf("                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
-	gotoxy(x, y + 14);
-	printf("                           ||     |-|-|          |-|-|    ||\n");
-	gotoxy(x, y + 15);
-	printf("               |＼=/|      ||     #####          #####    ||\n");
-	gotoxy(x, y + 16);
-	printf("               )    (      ||     _____   @@@@   _____    ||\n");
-	gotoxy(x, y + 17);
-	printf("              =＼  _/=     ||     |-|-|   @@*@   |-|-|    ||\n");
-	gotoxy(x, y + 18);
-	printf("            ＼  /   ＼     ||     #####   @@@@   #####    ||\n");
-	gotoxy(x, y + 19);
-	printf("             ＼(______)   ****************____***************\n");
-
-}
+	int drawing4() {	//히든엔딩
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		system("cls");
+		int x = 0, y = 0;
+		gotoxy(x, y + 1);
+		printf("                               << HIDDEN ENDING >>\n");
+		gotoxy(x, y + 2);
+		printf("                                   Total: %d\n", heart);
+		gotoxy(x, y + 4);  
+		printf("            *             *                                 *             *\n");
+		gotoxy(x, y + 5);
+		printf("    *                   *         |＼=/|            ♥          *             *\n");
+		gotoxy(x, y + 6);
+		printf("                  *               /6 6＼             ♥               *\n");
+		gotoxy(x, y + 7);
+		printf("                                 =＼ Y_/=         ♥\n");
+		gotoxy(x, y + 8);
+		printf("                                  /|||＼  /      ====\n");
+		gotoxy(x, y + 9);
+		printf("                                 ( |||  )/       !!!!\n");
+		gotoxy(x, y + 10);
+		printf("                               =========================\n");
+		gotoxy(x, y + 11);
+		printf("                             XXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		gotoxy(x, y + 12);
+		printf("                           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		gotoxy(x, y + 13);
+		printf("                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		gotoxy(x, y + 14);
+		printf("                           ||     |-|-|          |-|-|    ||\n");
+		gotoxy(x, y + 15);
+		printf("               |＼=/|      ||     #####          #####    ||\n");
+		gotoxy(x, y + 16);
+		printf("               )    (      ||     _____   @@@@   _____    ||\n");
+		gotoxy(x, y + 17);
+		printf("              =＼  _/=     ||     |-|-|   @@*@   |-|-|    ||\n");
+		gotoxy(x, y + 18);
+		printf("            ＼  /   ＼     ||     #####   @@@@   #####    ||\n");
+		gotoxy(x, y + 19);
+		printf("             ＼(______)   ****************____***************\n");
+		
+	}
 
 
 int hidden_ending() {	//히든엔딩

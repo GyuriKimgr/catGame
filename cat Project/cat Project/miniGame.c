@@ -31,6 +31,9 @@ void timeCnt() {
 }
 
 void playBoard() {
+    system("cls");
+    timeCnt();
+
     gotoxy(20, 10);
     printf("¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á\n");
     gotoxy(20, 11);

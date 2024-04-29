@@ -10,7 +10,7 @@
 #define Left 75
 #define WIDTH 80  //가로
 #define HEIGHT 20 //높이
-#define GAME_DURATION 60  // 게임 시간(초)
+#define GAME_DURATION 10  // 게임 시간(초)
 #define MAPX 3
 #define MAPY 2
 
@@ -25,8 +25,13 @@ time_t startTime;
 void timeCnt() {
     time_t currentTime = time(NULL);
     int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
-    gotoxy(0, 0);
-    printf("남은 시간: %d\n", remainingTime);
+    int digitCount = printf("남은 시간: %d", remainingTime);
+    for (int i = 0; i < digitCount; i++) {
+        printf("\b"); //이전에 출력된 내용을 덮어씌웁니다.
+    }
+    // 덮어씌울 숫자 출력
+    gotoxy(11, 0);
+    printf("%d \n", remainingTime);
 
 }
 
@@ -83,7 +88,7 @@ void playBoard() {
         gotoxy(0, 0);
         timeCnt();
         // 별이 플레이어에게 닿았을 때
-        if (starX == playerX && starY == playerY + 1) {
+        if ((starX >= playerX - 2 && starX <= playerX + 2) && (starY >= playerY && starY <= playerY + 2)) {
             score++;
             starX = (rand() % (30)) + 22; // 새로운 별의 가로 위치
             starY = 11; // 별의 세로 위치 초기화
@@ -151,29 +156,10 @@ void playBoard() {
                 break;
             }
         }
+        if (difftime(time(NULL), startTime) >= GAME_DURATION)
+            return 0;
     }
     }
-
-
-    //void drawBoard() {
-    //    system("cls");
-    //    // 게임의 남은 시간 계산
-    //    time_t currentTime = time(NULL);
-    //    int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
-    //    printf("남은 시간: %d\n", remainingTime);
-    //
-    //    for (int y = 0; y < HEIGHT; y++) {
-    //        for (int x = 0; x < WIDTH; x++) {
-    //            if (y == HEIGHT - 1 && x == playerX)
-    //                putchar(PLAYER);
-    //            else if (y == starY && x == starX)
-    //                putchar(STAR);
-    //            else
-    //                putchar(' ');
-    //        }
-    //        putchar('\n');
-    //    }
-    //}
 
     void updateStar() {
         starY++;
@@ -187,31 +173,20 @@ void playBoard() {
         Sleep(100);
     }
 
-        //void move() {
-        //  
-        //    if (_kbhit()) {
-        //    char key = _getch();
-        //    if (key == 75 && playerX > 0)
-        //        playerX -= 10;
-        //    else if (key == 77 && playerX < WIDTH - 1)
-        //        playerX += 10;
-        //    }
-        //    Sleep(1);
-        //}
-
     int miniGame() {
         system("cls");
         startTime = time(NULL);     // 게임 시작 시간 초기화
-        while (1) {
+        int endGame = 0;
+        while (!endGame) {
             // 현재 시간 갱신
             time_t currentTime = time(NULL);
             // 게임이 지정된 시간 이상 지났는지 확인
             if (difftime(currentTime, startTime) >= GAME_DURATION)
-                break;      // 시간 종료
-            timeCnt();
+                endGame = 1;     // 시간 종료
             playBoard();
+            if (endGame)
+                break;
         }
-
         system("cls");  // 게임 종료 후 게임 오버 메시지 출력
         int x = 17, y = 5;
         gotoxy(x, y);
@@ -238,7 +213,3 @@ void playBoard() {
         printf("YOUR SCORE: %d\n", score);
         return 0;
     }
-
-
-            
-           

@@ -10,7 +10,7 @@
 #define Left 75
 #define WIDTH 80  //가로
 #define HEIGHT 20 //높이
-#define GAME_DURATION 10  // 게임 시간(초)
+#define GAME_DURATION 60  // 게임 시간(초)
 #define MAPX 3
 #define MAPY 2
 

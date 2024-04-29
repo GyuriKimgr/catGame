@@ -116,54 +116,43 @@ void playBoard() {
             switch (key) {
             case 75: // 왼쪽 이동
                 if (playerX > 20) {
-                    if (key == 75 && playerX > 20) {
-                        gotoxy(playerX, playerY);
-                        printf("      ");
-                        printf("       ");
-                        gotoxy(playerX, playerY + 1);
-                        printf("      ");
-                        printf("       ");
-                        gotoxy(playerX, playerY + 2);
-                        printf("      ");
-                        playerX--;
-                        printf("       ");
-                        playerX -= 3;
-                        gotoxy(playerX, playerY);
-                        printf(" /＼/＼ \n");
-                        gotoxy(playerX, playerY + 1);
-                        printf("( o.o ) \n");
-                        gotoxy(playerX, playerY + 2);
-                        printf(" > ^ <  \n");
-                    }
-                    break;
+                    gotoxy(playerX, playerY);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 1);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 2);
+                    printf("      ");
+                    playerX--;
+                    gotoxy(playerX, playerY);
+                    printf(" /＼/＼ \n");
+                    gotoxy(playerX, playerY + 1);
+                    printf("( o.o ) \n");
+                    gotoxy(playerX, playerY + 2);
+                    printf(" > ^ <  \n");
+                }
+                break;
             case 77: // 오른쪽 이동
                 if (playerX < 45) {
-                    if (key == 77 && playerX < 45) {
-                        gotoxy(playerX, playerY);
-                        printf("      ");
-                        gotoxy(playerX, playerY + 1);
-                        printf("      ");
-                        gotoxy(playerX, playerY + 2);
-                        printf("      ");
-                        playerX++;
-                        playerX += 3;
-                        gotoxy(playerX, playerY);
-                        printf(" /＼/＼ \n");
-                        gotoxy(playerX, playerY + 1);
-                        printf("( o.o ) \n");
-                        gotoxy(playerX, playerY + 2);
-                        printf(" > ^ <  \n");
-                    }
-                    break;
+                    gotoxy(playerX, playerY);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 1);
+                    printf("      ");
+                    gotoxy(playerX, playerY + 2);
+                    printf("      ");
+                    playerX++;
+                    gotoxy(playerX, playerY);
+                    printf(" /＼/＼ \n");
+                    gotoxy(playerX, playerY + 1);
+                    printf("( o.o ) \n");
+                    gotoxy(playerX, playerY + 2);
+                    printf(" > ^ <  \n");
                 }
-                }
-
+                break;
             }
-
-        }
-        
         }
     }
+    }
+
 
     //void drawBoard() {
     //    system("cls");

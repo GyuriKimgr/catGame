@@ -1,4 +1,4 @@
-# catGame🐾 V.2.0
+# catGame🐾 
 **길냥이의 호감도를 올리고 여러 엔딩을 볼 수 있는 게임.**
     
 **Game that you can increase a stray cat's affection and unlock multiple endings.**

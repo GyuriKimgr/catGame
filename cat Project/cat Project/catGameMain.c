@@ -11,6 +11,6 @@ int main() {
 		gameLogic();
 		Ending();
 		
-		miniGame();
+
 	}
 }

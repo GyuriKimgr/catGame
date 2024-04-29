@@ -22,7 +22,7 @@ int y = 0;
 
 time_t startTime;
 
-void timeCnt() {
+void timeCnt(time_t startTime) {
     time_t currentTime = time(NULL);
     int remainingTime = GAME_DURATION - (int)difftime(currentTime, startTime);
     printf("남은 시간: %d\n", remainingTime);
@@ -144,6 +144,7 @@ void playBoard() {
                 }
             }
         }
+    timeCnt(starTime);  // 현재 남은 시간 출력
     }
 //void drawBoard() {
 //    system("cls");

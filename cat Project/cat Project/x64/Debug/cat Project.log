@@ -1,3 +1,7 @@
-﻿  day.c
-C:\Users\User\source\repos\ooc\cat Project\cat Project\day.c(20,7): warning C4101: 'key' :참조되지 않은 지역 변수입니다.
-  cat Project.vcxproj -> C:\Users\User\source\repos\ooc\cat Project\x64\Debug\cat Project.exe
+﻿  catGameMain.c
+C:\Users\ankm1\OneDrive\바탕 화면\새 폴더\cat Project\cat Project\catGameMain.c(5,2): warning C4013: 'initialize'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ankm1\OneDrive\바탕 화면\새 폴더\cat Project\cat Project\catGameMain.c(6,2): warning C4013: 'Menu'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ankm1\OneDrive\바탕 화면\새 폴더\cat Project\cat Project\catGameMain.c(10,3): warning C4013: 'Ending'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ankm1\OneDrive\바탕 화면\새 폴더\cat Project\cat Project\catGameMain.c(15,2): warning C4013: 'hideCursor'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ankm1\OneDrive\바탕 화면\새 폴더\cat Project\cat Project\catGameMain.c(17,2): warning C4013: 'startScreen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  cat Project.vcxproj -> C:\Users\ankm1\OneDrive\바탕 화면\새 폴더\cat Project\x64\Debug\cat Project.exe

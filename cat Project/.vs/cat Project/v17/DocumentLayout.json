@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\ooc\\cat Project\\",
+  "WorkspaceRootPath": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|C:\\Users\\User\\source\\repos\\ooc\\cat Project\\cat Project\\day.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\Ending.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|solutionrelative:cat Project\\Ending.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\start.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|solutionrelative:cat Project\\start.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\day.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|solutionrelative:cat Project\\day.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\miniGame.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|solutionrelative:cat Project\\miniGame.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\catGameMain.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{672FBDBE-B359-423F-BD5C-8CE9C924CD85}|cat Project\\cat Project.vcxproj|solutionrelative:cat Project\\catGameMain.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +30,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "start.c",
+              "DocumentMoniker": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\start.c",
+              "RelativeDocumentMoniker": "cat Project\\start.c",
+              "ToolTip": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\start.c",
+              "RelativeToolTip": "cat Project\\start.c",
+              "ViewState": "AQIAALQAAAAAAAAAAAAAAEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T11:44:14.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "day.c",
+              "DocumentMoniker": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\day.c",
+              "RelativeDocumentMoniker": "cat Project\\day.c",
+              "ToolTip": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\day.c",
+              "RelativeToolTip": "cat Project\\day.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-18T05:09:14.811Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "day.c",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ooc\\cat Project\\cat Project\\day.c",
-              "RelativeDocumentMoniker": "cat Project\\day.c",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\ooc\\cat Project\\cat Project\\day.c",
-              "RelativeToolTip": "cat Project\\day.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Title": "Ending.c",
+              "DocumentMoniker": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\Ending.c",
+              "RelativeDocumentMoniker": "cat Project\\Ending.c",
+              "ToolTip": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\Ending.c",
+              "RelativeToolTip": "cat Project\\Ending.c",
+              "ViewState": "AQIAAOoAAAAAAAAAAAAAAPQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-04-18T05:09:14.811Z",
+              "WhenOpened": "2024-04-30T11:44:17.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "miniGame.c",
+              "DocumentMoniker": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\miniGame.c",
+              "RelativeDocumentMoniker": "cat Project\\miniGame.c",
+              "ToolTip": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\miniGame.c",
+              "RelativeToolTip": "cat Project\\miniGame.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T11:44:21.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "catGameMain.c",
+              "DocumentMoniker": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\catGameMain.c",
+              "RelativeDocumentMoniker": "cat Project\\catGameMain.c",
+              "ToolTip": "C:\\Users\\ankm1\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC0C8 \uD3F4\uB354\\cat Project\\cat Project\\catGameMain.c",
+              "RelativeToolTip": "cat Project\\catGameMain.c",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAYwBUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T11:44:29.854Z",
               "EditorCaption": ""
             }
           ]

@@ -127,8 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="catGameMain.c" />
     <ClCompile Include="day.c" />
     <ClCompile Include="Ending.c" />
+    <ClCompile Include="miniGame.c" />
+    <ClCompile Include="start.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="day.h" />
+    <ClInclude Include="Ending.h" />
+    <ClInclude Include="miniGame.h" />
+    <ClInclude Include="start.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

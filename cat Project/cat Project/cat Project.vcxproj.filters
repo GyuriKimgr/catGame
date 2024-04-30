@@ -21,5 +21,28 @@
     <ClCompile Include="Ending.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="start.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="miniGame.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="catGameMain.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="start.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="day.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ending.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="miniGame.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

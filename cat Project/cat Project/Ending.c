@@ -2,6 +2,55 @@
 #include "day.h"
 #include "Ending.h"
 
+void initialize() {
+	// 변수 초기화
+	heart = 0;
+	// 화면 출력 위치 초기화
+	int x = 0, y = 0;
+	// 사용된 출력 함수 초기화
+	gotoxy(x, y);
+}
+
+int Menu() {
+	int z = 30, j = 22;
+	gotoxy(z, j);
+	while (1) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+		gotoxy(z, 22);
+		printf("메인으로 돌아가기\n");
+		gotoxy(z, 23);
+		printf("종료\n");
+
+		if (j == 22) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(z, 22);
+			printf("메인으로 돌아가기\n");
+		}
+		else if (j == 23) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
+			gotoxy(z, 22);
+			printf("메인으로 돌아가기\n");
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+			gotoxy(z, 23);
+			printf("종료\n");
+		}
+		char ch = _getch();
+		switch (ch) {
+		case 72:
+			if (j > 22) j--;
+			break;
+		case 80:
+			if (j < 23) j++;
+			break;
+		case 13:
+			if (j == 22) {
+				initialize();
+				return startScreen();
+			}
+			if (j == 23)return 0;
+		}
+	}
+}
 
 	int drawing1() {		// 베드엔딩
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
@@ -152,6 +201,7 @@ int hidden_ending() {	//히든엔딩
 }
 
 
+
 int Ending() {
 	setconsleview();
 
@@ -188,5 +238,7 @@ int Ending() {
 		slowPrint(1, ">> 고양이가 집사가 되었다.\n");
 		printf("================================================================================\n");
 	}
+	initialize();	// 초기화
+	return restartGame();	//게임 다시 시작
 }
 

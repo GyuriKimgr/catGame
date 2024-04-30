@@ -8,7 +8,7 @@
 		system("cls");
 		int x = 0, y = 0;
 		gotoxy(x, y + 1);
-		printf("                                << BAD ENDING >>\n");
+		printf("================================<< BAD ENDING >>================================\n");
 		gotoxy(x, y + 2);
 		printf("                                   Total: %d\n", heart);
 		gotoxy(x, y + 4);
@@ -39,7 +39,7 @@
 		system("cls");
 		int x = 0, y = 0;
 		gotoxy(x, y + 1);
-		printf("                              << NOMAL ENDING >>\n");
+		printf("===============================<< NOMAL ENDING >>===============================\n");
 		gotoxy(x, y + 2);
 		printf("                                  Total: %d\n", heart);
 		gotoxy(x, y + 4);                                       
@@ -71,13 +71,13 @@
 		system("cls");
 		int x = 0, y = 0;
 		gotoxy(x, y + 1);
-		printf("                               << TRUE ENDING >>\n");
+		printf("================================<< TRUE ENDING >>===============================\n");
 		gotoxy(x, y + 2);
 		printf("                                  Total: %d\n", heart);
 		gotoxy(x, y + 4);
-		printf("                                    _____\n");
+		printf("                                    _____          (내가 집사다냥~ ><)\n");
 		gotoxy(x, y + 5);
-		printf("                                   `=====`\n");
+		printf("                                   `=====`            v\n");      
 		gotoxy(x, y + 6);
 		printf("                                   .  |  .\n");
 		gotoxy(x, y + 7);
@@ -102,7 +102,7 @@
 		system("cls");
 		int x = 0, y = 0;
 		gotoxy(x, y + 1);
-		printf("                               << HIDDEN ENDING >>\n");
+		printf("===============================<< HIDDEN ENDING >>==============================\n");
 		gotoxy(x, y + 2);
 		printf("                                   Total: %d\n", heart);
 		gotoxy(x, y + 4);  
@@ -124,9 +124,9 @@
 		gotoxy(x, y + 12);
 		printf("                           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
 		gotoxy(x, y + 13);
-		printf("                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+		printf("              (냐옹~)    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
 		gotoxy(x, y + 14);
-		printf("                           ||     |-|-|          |-|-|    ||\n");
+		printf("                 v         ||     |-|-|          |-|-|    ||\n");
 		gotoxy(x, y + 15);
 		printf("               |＼=/|      ||     #####          #####    ||\n");
 		gotoxy(x, y + 16);

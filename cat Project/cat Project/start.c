@@ -133,7 +133,8 @@ int drawmenu() {
 }
 
 int startScreen(void) {
-	while (1) {
+	int code = 0;
+	while(1){
 		setconsleview();
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
 
@@ -165,9 +166,10 @@ int startScreen(void) {
 		printf("¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á¡à¡á\n");
 
 
-		int code = drawmenu();
+		code = drawmenu();
 		if (code == 1) {
 			story();
+			break;
 		}
 		else if (code == 2) {
 			mini = 1;

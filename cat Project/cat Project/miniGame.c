@@ -177,6 +177,15 @@ void playBoard() {
         Sleep(100);
     }
 
+    void miniGameReset() {
+        starX = 0;
+        starY = 0;
+        score = 0;
+        x = 0;
+        y = 0;
+        startTime = 0;
+    }
+
     int menuMini() {
         int z = 33, j = 22;
         gotoxy(z, j);
@@ -209,7 +218,10 @@ void playBoard() {
                 if (j < 23) j++;
                 break;
             case 13:
-                if (j == 22)return 3;
+                if (j == 22) {
+                    miniGameReset();
+                    return startScreen();
+                }
                 if (j == 23)return 0;
             }
         }

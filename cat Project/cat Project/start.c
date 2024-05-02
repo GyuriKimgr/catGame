@@ -6,6 +6,7 @@
 #include"start.h"
 #include"miniGame.h"
 int code = 0;
+int storyStart = 0;
 
 #pragma once
 
@@ -169,16 +170,18 @@ int startScreen(void) {
 
 		code = drawmenu();
 		if (code == 1) {
+			storyStart = 1;
 			story();
 			break;
 		}
 		else if (code == 2) {
+			storyStart = 0;
 			mini = 1;
-			miniGame();
-			if (miniGame == 3) {
+			int miniResult = miniGame();
+			if (miniResult == 3) {
 				continue;
 			}
-			else if (miniGame == 0) {
+			else if (miniResult == 0) {
 				exit(0);
 			}break;
 		}

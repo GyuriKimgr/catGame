@@ -44,8 +44,7 @@ int Menu() {
 			break;
 		case 13:
 			if (j == 22) {
-				initialize();
-				return startScreen();
+				return 4;
 			}
 			if (j == 23)return 0;
 		}
@@ -238,7 +237,6 @@ int Ending() {
 		slowPrint(1, ">> 고양이가 집사가 되었다.\n");
 		printf("================================================================================\n");
 	}
-	initialize();	// 초기화
-	return restartGame();	//게임 다시 시작
+	return Menu();
 }
 

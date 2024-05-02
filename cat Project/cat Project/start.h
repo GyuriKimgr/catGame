@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #pragma once	
-
+int storyStart;
 #define UP 0		// DEFINE ¼±¾ð
 #define DOWN 1
 

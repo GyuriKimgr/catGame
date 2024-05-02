@@ -2,10 +2,6 @@
 #include "miniGame.h"
 
 #include <time.h>
-#include <conio.h>
-#include <windows.h>
-#include <stdio.h>
-
 #define Right 77
 #define Left 75
 #define WIDTH 80  //가로
@@ -104,8 +100,10 @@ void playBoard() {
             gotoxy(starX, starY);
             printf("   "); // 이전 위치의 별 지우기
             starY++; // 아래로 이동
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
             gotoxy(starX, starY);
             printf("★"); // 새로운 위치에 별 출력
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
         }
 
         else {
@@ -220,10 +218,11 @@ void playBoard() {
             case 13:
                 if (j == 22) {
                     miniGameReset();
-                    return startScreen();
+                    return 3;
                 }
                 if (j == 23)return 0;
             }
+           
         }
     }
 
@@ -244,6 +243,7 @@ void playBoard() {
         system("cls");  // 게임 종료 후 게임 오버 메시지 출력
         int x = 17, y = 5;
         gotoxy(x, y);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
         printf(" ▣▣▣      ▣▣▣     ▣    ▣   ▣▣▣▣\n");
         gotoxy(x, y + 1);
         printf("▣     ▣  ▣      ▣  ▣ ▣▣ ▣  ▣\n");
@@ -254,6 +254,7 @@ void playBoard() {
         gotoxy(x, y + 4);
         printf(" ▣▣▣▣  ▣      ▣  ▣      ▣  ▣▣▣▣\n");
         gotoxy(x + 1, y + 6);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE);
         printf("  ■■■   ■      ■ ■■■■  ■■■■\n");
         gotoxy(x + 1, y + 7);
         printf(" ■     ■ ■      ■ ■        ■      ■\n");
@@ -264,6 +265,7 @@ void playBoard() {
         gotoxy(x + 1, y + 10);
         printf("  ■■■       ■     ■■■■  ■      ■\n\n");
         gotoxy(x + 10, y + 15);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), default);
         printf("나한테 별을 %d개만큼 먹여줬다냥!", score);
         gotoxy(17, 19);
         printf(" /＼/＼ \n");
